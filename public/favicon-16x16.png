@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Heart shape with N letter -->
+  <defs>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Heart background -->
+  <path d="M8 14C6.5 13 4 10.5 4 7.5C4 5.5 5.5 4 7.5 4C8.5 4 9.5 4.5 10 5.5C10.5 4.5 11.5 4 12.5 4C14.5 4 16 5.5 16 7.5C16 10.5 13.5 13 12 14C11 15 9.5 15.5 8 14Z" fill="url(#heartGradient)"/>
+  <!-- Letter N -->
+  <text x="10" y="10" font-family="Arial, sans-serif" font-size="7" font-weight="bold" text-anchor="middle" fill="white">N</text>
+</svg>
