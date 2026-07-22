@@ -200,11 +200,11 @@ const BlogDetail = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navigation />
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl font-bold mb-4">Content Not Found</h1>
-          <p className="text-muted-foreground mb-8">The article you're looking for doesn't exist.</p>
-          <Button onClick={() => navigate('/blog')}>
-            <ArrowLeft className="mr-2 h-4 w-4" />
+        <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Content Not Found</h1>
+          <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base md:text-lg">The article you're looking for doesn't exist.</p>
+          <Button onClick={() => navigate('/blog')} className="text-sm sm:text-base">
+            <ArrowLeft className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
             Back to Blog
           </Button>
         </div>
@@ -225,35 +225,35 @@ const BlogDetail = () => {
   const renderContent = () => {
     if (isResearch && researchPaper) {
       return (
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {researchPaper.content.abstract && (
-            <div className="bg-muted/50 p-6 rounded-lg border-l-4 border-primary">
-              <h3 className="font-semibold mb-2 flex items-center">
-                <BookOpen className="mr-2 h-5 w-5" />
+            <div className="bg-muted/50 p-4 sm:p-6 rounded-lg border-l-4 border-primary">
+              <h3 className="font-semibold mb-2 flex items-center text-sm sm:text-base md:text-lg">
+                <BookOpen className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Abstract
               </h3>
-              <p className="text-muted-foreground">{researchPaper.content.abstract}</p>
+              <p className="text-muted-foreground text-sm sm:text-base md:text-lg">{researchPaper.content.abstract}</p>
             </div>
           )}
           
           {researchPaper.content.sections.map((section) => (
-            <div key={section.id} className="space-y-4">
+            <div key={section.id} className="space-y-3 sm:space-y-4">
               {section.level === 1 && (
-                <h2 className="text-3xl font-bold text-foreground">{section.title}</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{section.title}</h2>
               )}
               {section.level === 2 && (
-                <h3 className="text-2xl font-semibold text-foreground">{section.title}</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">{section.title}</h3>
               )}
               {section.level === 3 && (
-                <h4 className="text-xl font-medium text-foreground">{section.title}</h4>
+                <h4 className="text-lg sm:text-xl md:text-2xl font-medium text-foreground">{section.title}</h4>
               )}
               
               {typeof section.content === 'string' && section.content && (
-                <p className="text-muted-foreground leading-relaxed">{section.content}</p>
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg">{section.content}</p>
               )}
               
               {Array.isArray(section.content) && section.content.length > 0 && (
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <ul className="list-disc list-inside space-y-1.5 sm:space-y-2 text-muted-foreground text-sm sm:text-base md:text-lg">
                   {section.content.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
@@ -261,13 +261,13 @@ const BlogDetail = () => {
               )}
               
               {section.subsections && section.subsections.map((subsection) => (
-                <div key={subsection.id} className="ml-6 space-y-3">
-                  <h4 className="text-xl font-semibold text-foreground">{subsection.title}</h4>
+                <div key={subsection.id} className="ml-4 sm:ml-6 space-y-2 sm:space-y-3">
+                  <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground">{subsection.title}</h4>
                   {typeof subsection.content === 'string' && (
-                    <p className="text-muted-foreground leading-relaxed">{subsection.content}</p>
+                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg">{subsection.content}</p>
                   )}
                   {Array.isArray(subsection.content) && (
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    <ul className="list-disc list-inside space-y-1.5 sm:space-y-2 text-muted-foreground text-sm sm:text-base md:text-lg">
                       {subsection.content.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
@@ -279,15 +279,15 @@ const BlogDetail = () => {
           ))}
           
           {researchPaper.content.references && researchPaper.content.references.length > 0 && (
-            <div className="border-t pt-8">
-              <h3 className="text-2xl font-bold mb-4">References</h3>
-              <div className="space-y-4">
+            <div className="border-t pt-6 sm:pt-8">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">References</h3>
+              <div className="space-y-3 sm:space-y-4">
                 {researchPaper.content.references.map((ref, idx) => (
-                  <div key={idx} className="text-sm text-muted-foreground">
-                    <p className="font-medium text-foreground">{ref.authors} ({ref.year}). {ref.title}.</p>
-                    <p><em>{ref.journal}</em>{ref.volume && `, ${ref.volume}`}{ref.issue && `(${ref.issue})`}{ref.pages && `, ${ref.pages}`}.</p>
+                  <div key={idx} className="text-xs sm:text-sm md:text-base text-muted-foreground">
+                    <p className="font-medium text-foreground text-sm sm:text-base md:text-lg">{ref.authors} ({ref.year}). {ref.title}.</p>
+                    <p className="text-xs sm:text-sm md:text-base"><em>{ref.journal}</em>{ref.volume && `, ${ref.volume}`}{ref.issue && `(${ref.issue})`}{ref.pages && `, ${ref.pages}`}.</p>
                     {ref.doi && (
-                      <a href={ref.doi} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      <a href={ref.doi} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-xs sm:text-sm md:text-base">
                         {ref.doi}
                       </a>
                     )}
@@ -303,21 +303,21 @@ const BlogDetail = () => {
     // Blog post content (markdown-like)
     if (blogPost) {
       return (
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
           {blogPost.content.split('\n').map((line, idx) => {
             if (line.startsWith('# ')) {
-              return <h1 key={idx} className="text-4xl font-bold mb-4">{line.replace('# ', '')}</h1>;
+              return <h1 key={idx} className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{line.replace('# ', '')}</h1>;
             }
             if (line.startsWith('## ')) {
-              return <h2 key={idx} className="text-3xl font-semibold mb-3">{line.replace('## ', '')}</h2>;
+              return <h2 key={idx} className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 sm:mb-3">{line.replace('## ', '')}</h2>;
             }
             if (line.startsWith('### ')) {
-              return <h3 key={idx} className="text-2xl font-medium mb-2">{line.replace('### ', '')}</h3>;
+              return <h3 key={idx} className="text-lg sm:text-xl md:text-2xl font-medium mb-2">{line.replace('### ', '')}</h3>;
             }
             if (line.trim() === '') {
               return <br key={idx} />;
             }
-            return <p key={idx} className="text-muted-foreground leading-relaxed mb-4">{line}</p>;
+            return <p key={idx} className="text-muted-foreground leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base md:text-lg">{line}</p>;
           })}
         </div>
       );
@@ -370,15 +370,15 @@ const BlogDetail = () => {
 
       <Navigation />
       
-      <article className="pt-8 pb-16">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <article className="pt-6 sm:pt-8 md:pt-12 pb-12 sm:pb-16 md:pb-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           {/* Back Button */}
           <Button 
             variant="ghost" 
             onClick={() => navigate('/blog')}
-            className="mb-6"
+            className="mb-4 sm:mb-6 text-sm sm:text-base"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            <ArrowLeft className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
             Back to Blog
           </Button>
 
@@ -387,41 +387,41 @@ const BlogDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8"
+            className="mb-6 sm:mb-8"
           >
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <Calendar className="h-4 w-4" />
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
+              <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <time>{formatDate(content.created_at)}</time>
-              <span className="mx-2">•</span>
-              <Clock className="h-4 w-4" />
+              <span className="mx-1 sm:mx-2">•</span>
+              <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <span>{content.read_time}</span>
-              <span className="mx-2">•</span>
-              <User className="h-4 w-4" />
+              <span className="mx-1 sm:mx-2">•</span>
+              <User className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <span>{content.author}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
               {content.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-2 mb-6">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
               {isResearch && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                  <Brain className="mr-1 h-3 w-3" />
+                <span className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs md:text-sm font-medium">
+                  <Brain className="mr-1 h-2.5 w-2.5 sm:h-3 sm:w-3" />
                   Research Paper
                 </span>
               )}
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm">
+              <span className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-muted text-muted-foreground text-[10px] sm:text-xs md:text-sm">
                 {content.category}
               </span>
             </div>
 
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
               {content.excerpt}
             </p>
 
             {/* Featured Image */}
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-8">
+            <div className="relative w-full aspect-video rounded-lg sm:rounded-lg md:rounded-lg overflow-hidden mb-6 sm:mb-8">
               <img
                 src={content.featured_image}
                 alt={content.title}
@@ -430,10 +430,10 @@ const BlogDetail = () => {
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
               {content.tags.map((tag) => (
-                <span key={tag} className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm">
-                  <Tag className="mr-1 h-3 w-3" />
+                <span key={tag} className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-secondary text-secondary-foreground text-[9px] sm:text-xs md:text-sm">
+                  <Tag className="mr-1 h-2.5 w-2.5 sm:h-3 sm:w-3" />
                   {tag}
                 </span>
               ))}
@@ -455,11 +455,11 @@ const BlogDetail = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="border-t mt-12 pt-8"
+            className="border-t mt-8 sm:mt-12 pt-6 sm:pt-8"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-semibold mb-2">Share this article</h3>
+                <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Share this article</h3>
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm" asChild>
                     <a
@@ -467,7 +467,7 @@ const BlogDetail = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Twitter className="h-4 w-4" />
+                      <Twitter className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
@@ -476,7 +476,7 @@ const BlogDetail = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Linkedin className="h-4 w-4" />
+                      <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </a>
                   </Button>
                   <Button 
@@ -486,7 +486,7 @@ const BlogDetail = () => {
                       navigator.clipboard.writeText(`https://nexagrowth.com${content.canonical_url}`);
                     }}
                   >
-                    <LinkIcon className="h-4 w-4" />
+                    <LinkIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </Button>
                 </div>
               </div>
@@ -498,21 +498,21 @@ const BlogDetail = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="border-t mt-12 pt-8"
+            className="border-t mt-8 sm:mt-12 pt-6 sm:pt-8"
           >
-            <h3 className="text-2xl font-bold mb-6">Related Articles</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">Related Articles</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {isResearch ? (
                 blogPosts.slice(0, 2).map((post) => (
                   <Link
                     key={post.id}
                     to={`/blog/${post.slug}`}
-                    className="block p-4 rounded-lg border hover:bg-muted/50 transition-colors"
+                    className="block p-3 sm:p-4 rounded-lg border hover:bg-muted/50 transition-colors"
                   >
-                    <h4 className="font-semibold mb-2">{post.title}</h4>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                    <div className="flex items-center mt-2 text-xs text-muted-foreground">
-                      <ChevronRight className="h-3 w-3" />
+                    <h4 className="font-semibold mb-2 text-sm sm:text-base md:text-lg">{post.title}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
+                    <div className="flex items-center mt-2 text-[10px] sm:text-xs text-muted-foreground">
+                      <ChevronRight className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                       Read more
                     </div>
                   </Link>
@@ -522,12 +522,12 @@ const BlogDetail = () => {
                   <Link
                     key={paper.id}
                     to={`/blog/${paper.slug}`}
-                    className="block p-4 rounded-lg border hover:bg-muted/50 transition-colors"
+                    className="block p-3 sm:p-4 rounded-lg border hover:bg-muted/50 transition-colors"
                   >
-                    <h4 className="font-semibold mb-2">{paper.title}</h4>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{paper.excerpt}</p>
-                    <div className="flex items-center mt-2 text-xs text-muted-foreground">
-                      <ChevronRight className="h-3 w-3" />
+                    <h4 className="font-semibold mb-2 text-sm sm:text-base md:text-lg">{paper.title}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{paper.excerpt}</p>
+                    <div className="flex items-center mt-2 text-[10px] sm:text-xs text-muted-foreground">
+                      <ChevronRight className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                       Read more
                     </div>
                   </Link>
