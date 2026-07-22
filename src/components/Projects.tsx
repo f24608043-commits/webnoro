@@ -228,6 +228,7 @@ export const Projects = () => {
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
+                  loading="lazy"
                   className="max-w-full max-h-full w-auto h-auto object-contain"
                 />
               </div>

@@ -27,7 +27,7 @@ export const ServicePageTemplate = ({ service, ctaText = 'Talk to an Expert', ba
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-15 dark:opacity-10" />
+          <img src={service.image} alt={service.title} loading="lazy" className="w-full h-full object-cover opacity-15 dark:opacity-10" />
           <div className="absolute inset-0 bg-background/50" />
         </div>
         <div className="container mx-auto px-6 relative z-10">

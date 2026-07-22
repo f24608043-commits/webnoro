@@ -41,6 +41,7 @@ const FounderCard = ({ founder, index }: { founder: Founder; index: number }) =>
             <img
               src={founder.image}
               alt={founder.name}
+              loading="lazy"
               className="relative w-40 h-40 rounded-full object-cover border-4 border-background shadow-2xl group-hover:scale-105 transition-transform duration-700"
             />
           </div>

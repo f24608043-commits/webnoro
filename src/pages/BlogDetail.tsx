@@ -425,6 +425,7 @@ const BlogDetail = () => {
               <img
                 src={content.featured_image}
                 alt={content.title}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>

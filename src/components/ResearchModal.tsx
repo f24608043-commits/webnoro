@@ -162,6 +162,7 @@ const ResearchModal: React.FC<ResearchModalProps> = ({ research, isOpen, onClose
             <img 
               src={research.image} 
               alt={research.title}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />

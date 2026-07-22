@@ -199,7 +199,7 @@ const AboutUs = () => {
       {/* The Edge */}
       <AnimatedSectionWrapper className="py-24 sm:py-32 md:py-40 lg:py-44 xl:py-48 bg-zinc-950/80 backdrop-blur-md">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=1080&fit=crop" alt="Background" className="w-full h-full object-cover grayscale" />
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=1080&fit=crop" alt="Background" loading="lazy" className="w-full h-full object-cover grayscale" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950 to-zinc-950" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">

@@ -44,6 +44,7 @@ const ResearchCard: React.FC<ResearchCardProps> = ({ research, onClick, index })
           <img 
             src={research.image} 
             alt={research.title}
+            loading="lazy"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
           />
           
