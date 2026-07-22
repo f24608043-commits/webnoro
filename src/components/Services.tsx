@@ -113,49 +113,49 @@ export const Services = () => {
 
   const renderServiceCards = (serviceList: typeof softwareServices) => {
     return (
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
         {serviceList.map((service, index) => (
           <Reveal key={service.title} delay={index * 0.1} direction="up">
             <TiltCard className="h-full">
-              <div className="group relative bg-card rounded-[2.5rem] p-10 border border-border/50 hover:border-primary/30 transition-all duration-500 h-full cursor-pointer overflow-hidden shadow-xl hover:shadow-2xl">
+              <div className="group relative bg-card rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] p-4 sm:p-6 md:p-8 lg:p-10 border border-border/50 hover:border-primary/30 transition-all duration-500 h-full cursor-pointer overflow-hidden shadow-xl hover:shadow-2xl">
                 {/* Soft glow on hover */}
-                <div className="absolute inset-0 rounded-[2.5rem] bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Icon */}
-                <div className="relative inline-block mb-8">
-                  <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
-                    <service.icon className="text-primary" size={40} strokeWidth={1.5} />
+                <div className="relative inline-block mb-4 sm:mb-6 md:mb-8">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl sm:rounded-2xl md:rounded-3xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                    <service.icon className="text-primary w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:size={40}" strokeWidth={1.5} />
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -bottom-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-primary rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-display font-black text-foreground mb-4 group-hover:text-primary transition-colors duration-300 tracking-tight">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-black text-foreground mb-2 sm:mb-3 md:mb-4 group-hover:text-primary transition-colors duration-300 tracking-tight">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Services List */}
-                <div className="space-y-4 mb-8">
-                  <p className="text-[10px] uppercase tracking-[0.2em] font-black text-primary/60">Capabilities</p>
-                  <ul className="space-y-3">
+                <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-6 md:mb-8">
+                  <p className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-black text-primary/60">Capabilities</p>
+                  <ul className="space-y-2 sm:space-y-3">
                     {service.services.slice(0, 4).map((item, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center gap-4 group/item">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors" />
-                        <span className="group-hover/item:text-foreground transition-colors font-medium">{item}</span>
+                      <li key={idx} className="text-[10px] sm:text-xs md:text-sm text-muted-foreground flex items-center gap-2 sm:gap-3 md:gap-4 group/item">
+                        <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors" />
+                        <span className="group-hover/item:text-foreground transition-colors font-medium line-clamp-1">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* Tools Badge */}
-                <div className="pt-8 border-t border-border/30 mt-auto">
-                  <p className="text-[10px] uppercase tracking-[0.2em] font-black text-muted-foreground/40 mb-3 font-sans">Tech Platform</p>
-                  <p className="text-xs text-muted-foreground/70 line-clamp-2 italic font-serif">
+                <div className="pt-4 sm:pt-6 md:pt-8 border-t border-border/30 mt-auto">
+                  <p className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-black text-muted-foreground/40 mb-2 sm:mb-3 font-sans">Tech Platform</p>
+                  <p className="text-[10px] sm:text-xs md:text-xs text-muted-foreground/70 line-clamp-2 italic font-serif">
                     {service.tools}
                   </p>
                 </div>
@@ -168,23 +168,23 @@ export const Services = () => {
   };
 
   return (
-    <section id="services" className="py-32 bg-transparent relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-transparent relative overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary rounded-full blur-[150px] animate-float" />
-        <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-accent rounded-full blur-[150px] animate-float" style={{ animationDelay: '-3.5s' }} />
+        <div className="absolute top-1/4 -left-20 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] bg-primary rounded-full blur-[100px] sm:blur-[125px] md:blur-[150px] animate-float" />
+        <div className="absolute bottom-1/4 -right-20 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] bg-accent rounded-full blur-[100px] sm:blur-[125px] md:blur-[150px] animate-float" style={{ animationDelay: '-3.5s' }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-24 max-w-4xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24 max-w-4xl mx-auto">
           <Reveal direction="down">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black mb-10 text-foreground tracking-tighter leading-none">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl lg:text-8xl font-display font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-foreground tracking-tighter leading-none">
               Services that <span className="text-primary reveal-line inline-block">bring ideas to life</span>
             </h2>
           </Reveal>
           <Reveal delay={0.25}>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium px-2">
               Comprehensive growth solutions tailored for the 2026 e-commerce landscape.
             </p>
           </Reveal>
@@ -193,17 +193,17 @@ export const Services = () => {
         {/* Interactive Tabs System */}
         <Reveal delay={0.4}>
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-3 mb-20 h-auto p-2 bg-secondary/20 backdrop-blur-3xl rounded-[2.5rem] border border-white/5 shadow-2xl">
-              <TabsTrigger value="software" className="text-sm md:text-lg py-5 rounded-[2rem] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl transition-all duration-500 font-black tracking-tight flex items-center justify-center gap-3">
-                <Code className="w-6 h-6" />
+            <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-3 mb-8 sm:mb-12 md:mb-16 lg:mb-20 h-auto p-1.5 sm:p-2 bg-secondary/20 backdrop-blur-3xl rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/5 shadow-2xl">
+              <TabsTrigger value="software" className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg py-3 sm:py-4 md:py-5 rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl transition-all duration-500 font-black tracking-tight flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
+                <Code className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 <span>Software</span>
               </TabsTrigger>
-              <TabsTrigger value="marketing" className="text-sm md:text-lg py-5 rounded-[2rem] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl transition-all duration-500 font-black tracking-tight flex items-center justify-center gap-3">
-                <Target className="w-6 h-6" />
+              <TabsTrigger value="marketing" className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg py-3 sm:py-4 md:py-5 rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl transition-all duration-500 font-black tracking-tight flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 <span>Marketing</span>
               </TabsTrigger>
-              <TabsTrigger value="video" className="text-sm md:text-lg py-5 rounded-[2rem] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl transition-all duration-500 font-black tracking-tight flex items-center justify-center gap-3">
-                <Video className="w-6 h-6" />
+              <TabsTrigger value="video" className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg py-3 sm:py-4 md:py-5 rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl transition-all duration-500 font-black tracking-tight flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
+                <Video className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 <span>Video</span>
               </TabsTrigger>
             </TabsList>
@@ -223,12 +223,12 @@ export const Services = () => {
         </Reveal>
 
         {/* Bottom Call to Action */}
-        <Reveal direction="up" delay={0.2} className="text-center mt-32">
-          <div className="bg-card/50 backdrop-blur-xl border border-border/50 rounded-[3rem] p-12 max-w-4xl mx-auto shadow-2xl">
-            <p className="text-2xl text-foreground font-bold mb-10 leading-relaxed italic font-serif">
+        <Reveal direction="up" delay={0.2} className="text-center mt-16 sm:mt-20 md:mt-24 lg:mt-32">
+          <div className="bg-card/50 backdrop-blur-xl border border-border/50 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-6 sm:p-8 md:p-10 lg:p-12 max-w-4xl mx-auto shadow-2xl">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground font-bold mb-6 sm:mb-8 md:mb-10 leading-relaxed italic font-serif px-2">
               "Every great transformation begins with a single conversation. Have a unique project in mind?"
             </p>
-            <a href="#contact" className="group relative inline-flex items-center gap-4 px-12 py-6 bg-primary text-primary-foreground rounded-full font-black text-xl hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-primary/40 overflow-hidden">
+            <a href="#contact" className="group relative inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 bg-primary text-primary-foreground rounded-full font-black text-sm sm:text-base md:text-lg lg:text-xl hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-primary/40 overflow-hidden">
               <span className="relative z-10">Start Your Journey</span>
               <div className="absolute inset-x-0 bottom-0 h-0 bg-white/20 group-hover:h-full transition-all duration-500" />
             </a>

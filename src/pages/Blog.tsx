@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -819,12 +820,15 @@ const ResearchCard = ({ paper, onClick }: { paper: ResearchPaper; onClick: () =>
           </div>
           <div className="flex gap-2">
             <Button
+              asChild
               size="sm"
               variant="ghost"
               className="rounded-xl text-primary hover:bg-primary/10"
             >
-              <Eye className="w-4 h-4 mr-1" />
-              Read Research
+              <Link to={`/blog/${paper.slug}`}>
+                <Eye className="w-4 h-4 mr-1" />
+                Read Research
+              </Link>
             </Button>
           </div>
         </div>
@@ -921,12 +925,15 @@ const BlogCard = ({ post, onClick }: { post: BlogPost; onClick: () => void }) =>
             </div>
           </div>
           <Button
+            asChild
             size="sm"
             variant="ghost"
             className="rounded-xl text-primary hover:bg-primary/10"
           >
-            Read Blog
-            <ArrowRight className="w-4 h-4 ml-1" />
+            <Link to={`/blog/${post.slug}`}>
+              Read Blog
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
           </Button>
         </div>
       </div>
@@ -1334,26 +1341,26 @@ const BlogPage = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-32 overflow-hidden bg-card border-b border-border">
+      <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-16 sm:pb-20 md:pb-24 lg:pb-32 overflow-hidden bg-card border-b border-border">
 
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-primary rounded-full blur-[160px]" />
+          <div className="absolute top-1/4 left-1/4 w-[400px] sm:w-[600px] md:w-[800px] h-[400px] sm:h-[600px] md:h-[800px] bg-primary rounded-full blur-[100px] sm:blur-[130px] md:blur-[160px]" />
         </div>
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-black uppercase tracking-widest mb-8 border border-primary/10">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/10 text-primary rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 sm:mb-6 md:mb-8 border border-primary/10">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-pulse" />
               Research Papers
             </div>
-            <h1 className="text-6xl md:text-8xl font-display font-black mb-8 text-foreground tracking-tighter leading-[0.9] italic uppercase">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black mb-4 sm:mb-6 md:mb-8 text-foreground tracking-tighter leading-[0.9] italic uppercase">
               Research <span className="text-primary">Studies</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium italic">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium italic px-2">
               Cutting-edge research in AI, software engineering, and adaptive learning systems.
             </p>
           </motion.div>
@@ -1361,8 +1368,8 @@ const BlogPage = () => {
       </section>
 
       {/* Research Cards Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1374,7 +1381,7 @@ const BlogPage = () => {
             </div>
             
             {/* Research Papers Grid - Easy to extend */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-10">
               {researchPapers.map((paper) => (
                 <ResearchCard key={paper.id} paper={paper} onClick={() => openModal(paper)} />
               ))}
@@ -1387,8 +1394,8 @@ const BlogPage = () => {
       </section>
 
       {/* Featured Blog Section */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1400,7 +1407,7 @@ const BlogPage = () => {
             </div>
             
             {/* Blog Posts Grid - Easy to extend */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-10">
               {blogPosts.map((post) => (
                 <BlogCard key={post.id} post={post} onClick={() => openBlogModal(post)} />
               ))}

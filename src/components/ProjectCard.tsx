@@ -51,38 +51,38 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false }: Pr
       )}
     >
       {/* Image: Full width on mobile with proper padding and object-fit */}
-      <div className="relative aspect-video overflow-hidden rounded-t-2xl bg-muted md:aspect-video">
+      <div className="relative aspect-[4/3] sm:aspect-video overflow-hidden rounded-t-xl bg-muted">
         <img
           src={currentImage}
           alt={project.title}
-          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105 md:object-cover"
+          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
           loading="lazy"
           decoding="async"
         />
         {/* Tag badge */}
-        <div className="absolute left-4 top-4">
-          <span className="rounded-lg bg-background/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-foreground backdrop-blur-sm">
+        <div className="absolute left-2 top-2 sm:left-3 sm:top-3">
+          <span className="rounded-md bg-background/90 px-1.5 py-0.5 sm:px-2 sm:py-1 text-[8px] sm:text-[10px] font-semibold uppercase tracking-wide text-foreground backdrop-blur-sm">
             {project.tags[0] ?? project.category}
           </span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-4 md:p-5">
-        <h3 className="mb-2 text-lg font-bold leading-tight text-foreground">
+      <div className="flex flex-1 flex-col p-2 sm:p-3 md:p-5">
+        <h3 className="mb-1 sm:mb-2 text-xs sm:text-base md:text-lg font-bold leading-tight text-foreground line-clamp-1 sm:line-clamp-2">
           {project.title}
         </h3>
-        <p className="mb-4 line-clamp-2 flex-1 text-sm text-muted-foreground">
+        <p className="mb-2 sm:mb-4 line-clamp-2 flex-1 text-[10px] sm:text-xs md:text-sm text-muted-foreground">
           {project.shortDescription}
         </p>
 
         {/* Buttons: always visible on mobile; on desktop can add opacity-0 group-hover:opacity-100 for fade-in */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {showLiveDemo && hasLiveLink ? (
             <Button
               asChild
               size="sm"
-              className="rounded-xl bg-primary text-primary-foreground shadow-sm transition-opacity duration-300 hover:bg-primary/90 md:opacity-90 md:group-hover:opacity-100"
+              className="rounded-md sm:rounded-lg md:rounded-xl bg-primary text-primary-foreground shadow-sm transition-opacity duration-300 hover:bg-primary/90 text-[10px] sm:text-xs md:text-sm px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 md:opacity-90 md:group-hover:opacity-100"
             >
               <a
                 href={project.liveLink}
@@ -90,7 +90,7 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false }: Pr
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                <ExternalLink className="mr-2 h-4 w-4" />
+                <ExternalLink className="mr-1 sm:mr-1.5 md:mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4" />
                 Live Demo
               </a>
             </Button>
@@ -98,13 +98,13 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false }: Pr
             <Button
               size="sm"
               variant="outline"
-              className="rounded-xl transition-opacity duration-300 md:opacity-90 md:group-hover:opacity-100"
+              className="rounded-md sm:rounded-lg md:rounded-xl transition-opacity duration-300 text-[10px] sm:text-xs md:text-sm px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 md:opacity-90 md:group-hover:opacity-100"
               onClick={(e) => {
                 e.stopPropagation();
                 onViewDetails(project);
               }}
             >
-              <Eye className="mr-2 h-4 w-4" />
+              <Eye className="mr-1 sm:mr-1.5 md:mr-2 h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4" />
               View Details
             </Button>
           )}

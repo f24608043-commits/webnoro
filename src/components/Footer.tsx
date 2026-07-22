@@ -42,49 +42,49 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/80 backdrop-blur-md text-white border-t border-green-500/20 py-16">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-black/80 backdrop-blur-md text-white border-t border-green-500/20 py-8 sm:py-12 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {/* Column 1: Brand Block */}
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-semibold text-primary mb-4 tracking-tight">
+          <div className="text-center sm:text-left">
+            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-3 sm:mb-4 tracking-tight">
               NEXA GROWTH
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
               Scaling Brands Through Amazon, Digital Marketing & Technology
             </p>
           </div>
 
           {/* Column 2: Contact Information */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold text-white mb-6">Contact Information</h3>
-            <div className="space-y-4">
+          <div className="text-center sm:text-left">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Contact Information</h3>
+            <div className="space-y-3 sm:space-y-4">
               <a
                 href="tel:+923711633762"
-                className="flex items-center justify-center md:justify-start gap-3 text-gray-400 hover:text-green-400 transition-colors duration-300"
+                className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 text-gray-400 hover:text-green-400 transition-colors duration-300 text-xs sm:text-sm"
               >
-                <Phone size={18} className="text-primary" />
+                <Phone className="text-primary w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 <span>+92 371 1633762</span>
               </a>
               <a
                 href="mailto:nexagrowthsolution@gmail.com"
-                className="flex items-center justify-center md:justify-start gap-3 text-gray-400 hover:text-green-400 transition-colors duration-300"
+                className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 text-gray-400 hover:text-green-400 transition-colors duration-300 text-xs sm:text-sm"
               >
-                <Mail size={18} className="text-primary" />
+                <Mail className="text-primary w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 <span>nexagrowthsolution@gmail.com</span>
               </a>
             </div>
           </div>
 
           {/* Column 3: Navigation (SEO-Optimized) */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold text-white mb-6">Navigation</h3>
-            <ul className="grid grid-cols-1 gap-3">
+          <div className="text-center sm:text-left">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Navigation</h3>
+            <ul className="grid grid-cols-1 gap-2 sm:gap-3">
               {navigationLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-sm"
+                    className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-xs sm:text-sm"
                   >
                     {link.name}
                   </Link>
@@ -94,9 +94,9 @@ export const Footer = () => {
           </div>
 
           {/* Column 4: Social Media */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold text-white mb-6">Connect With Us</h3>
-            <div className="flex justify-center md:justify-start gap-4">
+          <div className="text-center sm:text-left">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Connect With Us</h3>
+            <div className="flex justify-center sm:justify-start gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -104,9 +104,9 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-2 rounded-lg bg-green-500/5 text-gray-400 hover:text-green-400 hover:scale-110 transition-all duration-300 border border-green-500/10 hover:border-green-500/30"
+                  className="p-1.5 sm:p-2 rounded-lg bg-green-500/5 text-gray-400 hover:text-green-400 hover:scale-110 transition-all duration-300 border border-green-500/10 hover:border-green-500/30"
                 >
-                  <social.icon size={22} />
+                  <social.icon className="w-[18px] h-[18px] sm:w-[22px] sm:h-[22px]" />
                 </a>
               ))}
             </div>
@@ -114,11 +114,11 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Copyright Strip */}
-        <div className="border-t border-green-500/10 mt-16 pt-8 text-center">
-          <p className="text-gray-400 text-sm mb-2">
+        <div className="border-t border-green-500/10 mt-8 sm:mt-12 md:mt-16 pt-6 sm:pt-8 text-center">
+          <p className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">
             {currentYear} NexaGrowth.dev — All Rights Reserved.
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-xs sm:text-sm">
             A Product by <span className="text-green-400 font-medium">Nexa Growth</span>
           </p>
         </div>

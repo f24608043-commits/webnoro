@@ -119,46 +119,46 @@ export const Contact = () => {
   };
 
   return (
-    <AnimatedSectionWrapper ref={sectionRef} id="contact" className="py-32 hero-antigravity">
+    <AnimatedSectionWrapper ref={sectionRef} id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 hero-antigravity">
       {/* Premium Background Orbs */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[160px] animate-float" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[140px] animate-pulse" />
+        <div className="absolute top-0 right-0 w-[300px] sm:w-[500px] md:w-[600px] lg:w-[800px] h-[300px] sm:h-[500px] md:h-[600px] lg:h-[800px] bg-primary/20 rounded-full blur-[100px] sm:blur-[130px] md:blur-[145px] lg:blur-[160px] animate-float" />
+        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[250px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-accent/20 rounded-full blur-[90px] sm:blur-[115px] md:blur-[130px] lg:blur-[140px] animate-pulse" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 max-w-6xl mx-auto items-center">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 max-w-6xl mx-auto items-center">
           {/* Left Side - Headline and Info */}
           <div>
             <Reveal direction="down">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 rounded-full text-primary font-black text-sm mb-10 border border-primary/20 backdrop-blur-md uppercase tracking-[0.2em]">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary/10 rounded-full text-primary font-black text-[10px] sm:text-xs md:text-sm mb-6 sm:mb-8 md:mb-10 border border-primary/20 backdrop-blur-md uppercase tracking-[0.2em]">
                 Communications Center
               </div>
             </Reveal>
 
-            <h2 ref={headlineRef} className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-8 text-foreground leading-[0.85] tracking-tighter uppercase italic text-center lg:text-left">
+            <h2 ref={headlineRef} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black mb-4 sm:mb-6 md:mb-8 text-foreground leading-[0.85] tracking-tighter uppercase italic text-center lg:text-left">
               Connect
             </h2>
             <Reveal delay={0.4}>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg font-medium font-serif italic leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-lg font-medium font-serif italic leading-relaxed px-2">
                 Direct engagement protocols are active. Broadcast your requirements and prepare for structural expansion.
               </p>
             </Reveal>
 
             {/* Contact Info Cards */}
-            <div className="space-y-4 max-w-sm">
+            <div className="space-y-3 sm:space-y-4 max-w-sm">
               <Reveal direction="left" delay={0.6}>
                 <Magnetic strength={0.1}>
                   <a href="mailto:nexagrowthsolution@gmail.com" className="block w-full">
-                    <div className="rounded-[1.5rem] p-4 md:p-6 border border-border/30 bg-secondary/20 backdrop-blur-xl shadow-xl hover:border-primary/50 transition-all duration-500 group relative overflow-hidden">
-                      <div className="absolute -right-2 -top-2 w-16 h-16 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/20 transition-all duration-500" />
-                      <div className="flex items-center gap-3 md:gap-4">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-glow">
-                          <Mail className="text-black" size={20} />
+                    <div className="rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] p-3 sm:p-4 md:p-6 border border-border/30 bg-secondary/20 backdrop-blur-xl shadow-xl hover:border-primary/50 transition-all duration-500 group relative overflow-hidden">
+                      <div className="absolute -right-2 -top-2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/20 transition-all duration-500" />
+                      <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-glow">
+                          <Mail className="text-black w-4 h-4 sm:w-5 sm:h-5 md:size={20}" />
                         </div>
                         <div>
-                          <h4 className="font-black text-foreground uppercase tracking-widest text-[10px] mb-1">Secure Email</h4>
-                          <span className="text-sm md:text-base font-bold tracking-tight">nexagrowthsolution@gmail.com</span>
+                          <h4 className="font-black text-foreground uppercase tracking-widest text-[8px] sm:text-[9px] md:text-[10px] mb-0.5 sm:mb-1">Secure Email</h4>
+                          <span className="text-xs sm:text-sm md:text-base font-bold tracking-tight line-clamp-1">nexagrowthsolution@gmail.com</span>
                         </div>
                       </div>
                     </div>
@@ -169,15 +169,15 @@ export const Contact = () => {
               <Reveal direction="left" delay={0.75}>
                 <Magnetic strength={0.1}>
                   <a href="tel:+923711633762" className="block w-full">
-                    <div className="rounded-[1.5rem] p-4 md:p-6 border border-border/30 bg-secondary/20 backdrop-blur-xl shadow-xl hover:border-primary/50 transition-all duration-500 group relative overflow-hidden">
-                      <div className="absolute -right-2 -top-2 w-16 h-16 bg-accent/5 rounded-full blur-xl group-hover:bg-accent/20 transition-all duration-500" />
-                      <div className="flex items-center gap-3 md:gap-4">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500 shadow-glow">
-                          <Phone className="text-black" size={20} />
+                    <div className="rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] p-3 sm:p-4 md:p-6 border border-border/30 bg-secondary/20 backdrop-blur-xl shadow-xl hover:border-primary/50 transition-all duration-500 group relative overflow-hidden">
+                      <div className="absolute -right-2 -top-2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-accent/5 rounded-full blur-xl group-hover:bg-accent/20 transition-all duration-500" />
+                      <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500 shadow-glow">
+                          <Phone className="text-black w-4 h-4 sm:w-5 sm:h-5 md:size={20}" />
                         </div>
                         <div>
-                          <h4 className="font-black text-foreground uppercase tracking-widest text-[10px] mb-1">Direct Line</h4>
-                          <span className="text-sm md:text-base font-bold tracking-tight">+92 371 1633762</span>
+                          <h4 className="font-black text-foreground uppercase tracking-widest text-[8px] sm:text-[9px] md:text-[10px] mb-0.5 sm:mb-1">Direct Line</h4>
+                          <span className="text-xs sm:text-sm md:text-base font-bold tracking-tight">+92 371 1633762</span>
                         </div>
                       </div>
                     </div>
@@ -186,14 +186,14 @@ export const Contact = () => {
               </Reveal>
 
               <Reveal direction="up" delay={0.9}>
-                <div className="rounded-[1.5rem] p-4 md:p-6 bg-gradient-to-r from-primary to-emerald-500 text-black shadow-[0_0_30px_rgba(34,197,94,0.3)] border border-white/20">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/10 flex items-center justify-center animate-pulse">
-                      <MessageSquare size={16} />
+                <div className="rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] p-3 sm:p-4 md:p-6 bg-gradient-to-r from-primary to-emerald-500 text-black shadow-[0_0_30px_rgba(34,197,94,0.3)] border border-white/20">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-black/10 flex items-center justify-center animate-pulse">
+                      <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4 md:size={16}" />
                     </div>
                     <div>
-                      <h3 className="text-lg md:text-xl font-black font-display uppercase italic tracking-tighter leading-none">24×7 Active</h3>
-                      <p className="text-xs md:text-sm font-bold opacity-70 uppercase tracking-widest">Global Responsiveness</p>
+                      <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-black font-display uppercase italic tracking-tighter leading-none">24×7 Active</h3>
+                      <p className="text-[10px] sm:text-xs md:text-sm font-bold opacity-70 uppercase tracking-widest">Global Responsiveness</p>
                     </div>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export const Contact = () => {
 
             {/* Social Connect */}
             <Reveal direction="up" delay={1.0}>
-              <div className="flex gap-3 mt-6">
+              <div className="flex gap-2 sm:gap-3 mt-4 sm:mt-6">
                 {[
                   { icon: Linkedin, url: 'https://www.linkedin.com/in/nexa-growth-solutions/', name: 'LinkedIn' },
                   { icon: Instagram, url: 'https://www.instagram.com/nexagrowthsolution/', name: 'Instagram' },
@@ -215,9 +215,9 @@ export const Contact = () => {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl border border-white/10 hover:bg-primary hover:border-primary transition-all duration-500"
+                        className="group relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/5 rounded-xl border border-white/10 hover:bg-primary hover:border-primary transition-all duration-500"
                       >
-                        <Icon className="text-white group-hover:text-black transition-colors" size={16} />
+                        <Icon className="text-white group-hover:text-black transition-colors w-3.5 h-3.5 sm:w-4 sm:h-4 md:size={16}" />
                       </a>
                     </Magnetic>
                   );
@@ -230,12 +230,12 @@ export const Contact = () => {
           <div className="relative">
             <Reveal direction="up" delay={0.3}>
               <TiltCard className="w-full form-container">
-                <div className="relative rounded-[2rem] md:rounded-[3rem] p-6 md:p-8 border border-white/5 bg-zinc-950/80 backdrop-blur-md shadow-xl overflow-hidden group">
+                <div className="relative rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[3rem] p-4 sm:p-5 md:p-6 lg:p-8 border border-white/5 bg-zinc-950/80 backdrop-blur-md shadow-xl overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 pointer-events-none" />
 
-                  <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                    <div className="space-y-2 form-element">
-                      <label htmlFor="from_name" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary ml-2">Full Name</label>
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6 relative z-10">
+                    <div className="space-y-1.5 sm:space-y-2 form-element">
+                      <label htmlFor="from_name" className="text-[8px] sm:text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-primary ml-2">Full Name</label>
                       <Input
                         id="from_name"
                         name="from_name"
@@ -243,12 +243,12 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="John Doe"
                         required
-                        className="h-12 md:h-14 rounded-2xl border-white/5 bg-white/5 backdrop-blur-md focus:border-primary focus:ring-0 focus:bg-white/10 transition-all text-base md:text-lg font-bold placeholder:text-white/20 px-6"
+                        className="h-10 sm:h-11 md:h-12 lg:h-14 rounded-xl sm:rounded-2xl border-white/5 bg-white/5 backdrop-blur-md focus:border-primary focus:ring-0 focus:bg-white/10 transition-all text-sm sm:text-base md:text-lg font-bold placeholder:text-white/20 px-4 sm:px-5 md:px-6"
                       />
                     </div>
 
-                    <div className="space-y-2 form-element">
-                      <label htmlFor="from_email" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary ml-2">Email Address</label>
+                    <div className="space-y-1.5 sm:space-y-2 form-element">
+                      <label htmlFor="from_email" className="text-[8px] sm:text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-primary ml-2">Email Address</label>
                       <Input
                         id="from_email"
                         name="from_email"
@@ -257,12 +257,12 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="john@example.com"
                         required
-                        className="h-12 md:h-14 rounded-2xl border-white/5 bg-white/5 backdrop-blur-md focus:border-primary focus:ring-0 focus:bg-white/10 transition-all text-base md:text-lg font-bold placeholder:text-white/20 px-6"
+                        className="h-10 sm:h-11 md:h-12 lg:h-14 rounded-xl sm:rounded-2xl border-white/5 bg-white/5 backdrop-blur-md focus:border-primary focus:ring-0 focus:bg-white/10 transition-all text-sm sm:text-base md:text-lg font-bold placeholder:text-white/20 px-4 sm:px-5 md:px-6"
                       />
                     </div>
 
-                    <div className="space-y-2 form-element">
-                      <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary ml-2">Message</label>
+                    <div className="space-y-1.5 sm:space-y-2 form-element">
+                      <label htmlFor="message" className="text-[8px] sm:text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-primary ml-2">Message</label>
                       <Textarea
                         id="message"
                         name="message"
@@ -271,28 +271,28 @@ export const Contact = () => {
                         placeholder="How can we help you?"
                         rows={3}
                         required
-                        className="rounded-[1.5rem] md:rounded-[2rem] border-white/5 bg-white/5 backdrop-blur-md focus:border-primary focus:ring-0 focus:bg-white/10 transition-all text-base md:text-lg font-bold placeholder:text-white/20 p-6 resize-none"
+                        className="rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] border-white/5 bg-white/5 backdrop-blur-md focus:border-primary focus:ring-0 focus:bg-white/10 transition-all text-sm sm:text-base md:text-lg font-bold placeholder:text-white/20 p-4 sm:p-5 md:p-6 resize-none"
                       />
                     </div>
 
                     <Magnetic strength={0.1}>
-                      <div className="pt-4 form-element">
-                        <Button type="submit" size="lg" disabled={isSubmitting} className="w-full h-14 md:h-16 rounded-full text-lg md:text-xl font-black group shadow-[0_0_30px_rgba(34,197,94,0.2)] transition-all bg-primary text-black hover:bg-white uppercase italic tracking-tighter">
-                          <div className="flex items-center justify-center gap-3">
+                      <div className="pt-2 sm:pt-3 md:pt-4 form-element">
+                        <Button type="submit" size="lg" disabled={isSubmitting} className="w-full h-11 sm:h-12 md:h-14 lg:h-16 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-black group shadow-[0_0_30px_rgba(34,197,94,0.2)] transition-all bg-primary text-black hover:bg-white uppercase italic tracking-tighter">
+                          <div className="flex items-center justify-center gap-2 sm:gap-3">
                             {isSuccess ? (
                               <>
-                                <CheckCircle className="h-5 w-5 md:h-6 md:w-6 animate-pulse" />
-                                Sent Successfully
+                                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 animate-pulse" />
+                                <span className="text-xs sm:text-sm md:text-base">Sent Successfully</span>
                               </>
                             ) : isSubmitting ? (
                               <>
-                                <div className="w-5 h-5 md:w-6 md:h-6 border-3 border-black/30 border-t-black rounded-full animate-spin" />
-                                Sending...
+                                <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 border-3 border-black/30 border-t-black rounded-full animate-spin" />
+                                <span className="text-xs sm:text-sm md:text-base">Sending...</span>
                               </>
                             ) : (
                               <>
-                                Send Message
-                                <Send className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                                <span className="text-xs sm:text-sm md:text-base">Send Message</span>
+                                <Send className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
                               </>
                             )}
                           </div>
@@ -301,7 +301,7 @@ export const Contact = () => {
                     </Magnetic>
 
                     {error && (
-                      <p className="text-red-500 text-center font-bold mt-4">{error}</p>
+                      <p className="text-red-500 text-center font-bold mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm md:text-base">{error}</p>
                     )}
                   </form>
                 </div>
@@ -309,8 +309,8 @@ export const Contact = () => {
             </Reveal>
 
             {/* Visual Decoration */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700 pointer-events-none" />
+            <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 -right-6 sm:-right-8 md:-right-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-primary/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
+            <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-6 sm:-left-8 md:-left-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700 pointer-events-none" />
           </div>
         </div>
       </div>

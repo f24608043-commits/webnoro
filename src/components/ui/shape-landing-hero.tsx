@@ -119,7 +119,7 @@ export function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[var(--hero-bg)] transition-colors duration-500">
+        <div className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full flex items-center justify-center overflow-hidden bg-[var(--hero-bg)] transition-colors duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-[rgba(var(--hero-shape-color),0.05)] via-transparent to-[rgba(var(--hero-shape-color),0.03)] blur-3xl opacity-30" />
 
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -186,10 +186,10 @@ export function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--hero-text-primary)]/[0.03] border border-[var(--hero-text-primary)]/[0.08] mb-8 md:mb-12"
+                        className="inline-flex items-center gap-2 px-2 py-1 sm:px-3 sm:py-1 rounded-full bg-[var(--hero-text-primary)]/[0.03] border border-[var(--hero-text-primary)]/[0.08] mb-6 sm:mb-8 md:mb-12"
                     >
                         <Circle className="h-2 w-2 fill-[var(--hero-text-accent)] text-[var(--hero-text-accent)]" />
-                        <span className="text-sm text-[var(--hero-text-primary)]/60 tracking-wide font-medium">
+                        <span className="text-xs sm:text-sm text-[var(--hero-text-primary)]/60 tracking-wide font-medium">
                             {title1} {title2}
                         </span>
                     </motion.div>
@@ -200,7 +200,7 @@ export function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold mb-6 tracking-tighter">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold mb-4 sm:mb-6 tracking-tighter">
                             <span className="text-[var(--hero-text-primary)] drop-shadow-2xl">
                                 {title1}
                             </span>
@@ -217,7 +217,7 @@ export function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-lg md:text-2xl text-[var(--hero-text-primary)]/60 mb-12 leading-relaxed font-light tracking-wide max-w-3xl mx-auto">
+                        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[var(--hero-text-primary)]/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-2">
                             {badge}
                         </p>
                     </motion.div>
@@ -227,18 +227,18 @@ export function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+                        className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center px-4"
                     >
                         <button
                             onClick={() => navigate('/contact')}
-                            className="px-10 py-4 rounded-full bg-[#064e3b] text-white font-bold uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_20px_rgba(6,78,59,0.3)] hover:opacity-90"
+                            className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 rounded-full bg-[#064e3b] text-white font-bold uppercase text-xs sm:text-sm md:text-base tracking-widest transition-all hover:scale-105 shadow-[0_0_20px_rgba(6,78,59,0.3)] hover:opacity-90"
                         >
                             Book Free Strategy Call
                         </button>
 
                         <button
                             onClick={() => navigate('/services')}
-                            className="px-10 py-4 rounded-full border border-[#064e3b] text-[#064e3b] hover:bg-[#064e3b]/5 font-bold uppercase tracking-widest transition-all hover:scale-105 backdrop-blur-sm"
+                            className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 rounded-full border border-[#064e3b] text-[#064e3b] hover:bg-[#064e3b]/5 font-bold uppercase text-xs sm:text-sm md:text-base tracking-widest transition-all hover:scale-105 backdrop-blur-sm"
                         >
                             View Services
                         </button>

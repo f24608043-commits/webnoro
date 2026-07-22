@@ -19,6 +19,8 @@ import GraphicDesigning from "./pages/GraphicDesigning";
 import BusinessGrowth from "./pages/Accounting";
 import Content from "./pages/Content";
 import CaseStudies from "./pages/CaseStudies";
+import BlogDetail from "./pages/BlogDetail";
+import ProjectDetail from "./pages/ProjectDetail";
 
 import MarketplaceManagement from "./pages/services/MarketplaceManagement";
 import ListingOptimization from "./pages/services/ListingOptimization";
@@ -73,6 +75,7 @@ const App = () => (
                       <Route path="/content" element={<Content />} />
 
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/project/:category" element={<ProjectDetail />} />
           <Route path="/ecommerce-projects" element={<ProjectsPage />} />
           <Route path="/amazon-projects" element={<Navigate to="/ecommerce-projects" replace />} />
 
@@ -80,6 +83,7 @@ const App = () => (
 
           <Route path="/careers" element={<Navigate to="/blog" replace />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
 
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,6 +17,22 @@ export const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (isMobileMenuOpen && !(e.target as HTMLElement).closest('nav')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -88,24 +105,62 @@ export const Navigation = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 right-0 bg-background/98 backdrop-blur-lg border-t border-border animate-fade-in shadow-lg">
-            <div className="flex flex-col space-y-4 p-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleClick(e, link.href)}
-                  className={`font-medium text-lg transition-all duration-300 hover:translate-x-2 ${isActive(link.href) ? 'text-primary' : 'text-foreground/70 hover:text-primary'
-                    }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              
+              {/* Slide-in Menu */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                className="lg:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-background/98 backdrop-blur-lg border-l border-border z-50 shadow-2xl overflow-y-auto"
+              >
+                <div className="p-6">
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="absolute top-4 right-4 p-2 rounded-lg hover:bg-muted transition-colors"
+                  >
+                    <X size={24} />
+                  </button>
+
+                  {/* Menu Items */}
+                  <div className="flex flex-col space-y-2 mt-8">
+                    {navLinks.map((link, index) => (
+                      <motion.a
+                        key={link.name}
+                        href={link.href}
+                        onClick={(e) => handleClick(e, link.href)}
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: index * 0.05 }}
+                        className={`font-medium text-base py-3 px-4 rounded-lg transition-all duration-300 ${
+                          isActive(link.href)
+                            ? 'bg-primary/10 text-primary'
+                            : 'text-foreground/70 hover:bg-muted hover:text-foreground'
+                        }`}
+                      >
+                        {link.name}
+                      </motion.a>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
