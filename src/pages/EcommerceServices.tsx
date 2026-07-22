@@ -81,43 +81,43 @@ const EcommerceServices = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <AnimatedSectionWrapper ref={heroRef} className="pt-64 pb-32 hero-antigravity">
+      <AnimatedSectionWrapper ref={heroRef} className="pt-24 sm:pt-32 md:pt-40 lg:pt-48 xl:pt-64 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32 hero-antigravity">
         <div className="absolute inset-0 bg-grid-pattern animate-grid-move opacity-20" />
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-primary rounded-full blur-[160px] animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-accent rounded-full blur-[140px] animate-pulse" />
+          <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[800px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[800px] bg-primary rounded-full blur-[100px] sm:blur-[120px] md:blur-[140px] lg:blur-[150px] xl:blur-[160px] animate-float" />
+          <div className="absolute bottom-1/4 right-1/4 w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] xl:w-[600px] h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] xl:h-[600px] bg-accent rounded-full blur-[90px] sm:blur-[105px] md:blur-[120px] lg:blur-[130px] xl:blur-[140px] animate-pulse" />
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-7xl mx-auto text-center">
             <Reveal direction="down">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 rounded-full text-primary font-bold text-sm mb-12 border border-primary/20 backdrop-blur-md uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary/10 rounded-full text-primary font-bold text-[10px] sm:text-xs md:text-sm mb-6 sm:mb-8 md:mb-10 lg:mb-12 border border-primary/20 backdrop-blur-md uppercase tracking-widest">
                 E-Commerce Systems
               </div>
             </Reveal>
-            <h1 ref={headlineRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black mb-8 text-foreground tracking-tighter leading-[0.9] max-w-5xl mx-auto text-center">
+            <h1 ref={headlineRef} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black mb-4 sm:mb-6 md:mb-8 text-foreground tracking-tighter leading-[0.9] max-w-5xl mx-auto text-center">
               <span className="block">Scalable Systems</span>
               <span className="block">For Ecommerce</span>
             </h1>
             <Reveal delay={0.4}>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed font-medium">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed font-medium px-2">
                 We help brands grow on Amazon, Shopify, and global marketplaces with optimized listings, ads, and automation systems.
               </p>
             </Reveal>
             <Reveal delay={0.6}>
-              <div className="flex flex-wrap justify-center gap-3 mb-12">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                 {trustTags.map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-primary/5 border border-primary/20 rounded-full text-primary text-sm font-semibold">
+                  <span key={tag} className="px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 bg-primary/5 border border-primary/20 rounded-full text-primary text-[10px] sm:text-xs md:text-sm font-semibold">
                     {tag}
                   </span>
                 ))}
               </div>
             </Reveal>
             <Reveal delay={0.8}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
                 <Magnetic strength={0.25}>
                   <Button
                     size="lg"
-                    className="rounded-full px-12 py-8 text-xl font-black shadow-glow bg-primary text-black uppercase tracking-widest italic"
+                    className="rounded-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-2 sm:py-3 md:py-4 lg:py-5 xl:py-6 lg:py-8 text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl font-black shadow-glow bg-primary text-black uppercase tracking-widest italic"
                     onClick={() => navigate('/contact')}
                   >
                     Scale Your Store
@@ -127,7 +127,7 @@ const EcommerceServices = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full px-12 py-8 text-xl font-black border-2 border-primary text-primary hover:bg-primary/10 uppercase tracking-widest italic"
+                    className="rounded-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-2 sm:py-3 md:py-4 lg:py-5 xl:py-6 lg:py-8 text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl font-black border-2 border-primary text-primary hover:bg-primary/10 uppercase tracking-widest italic"
                     onClick={() => navigate('/projects#ecommerce-projects')}
                   >
                     View Case Studies
@@ -140,37 +140,37 @@ const EcommerceServices = () => {
       </AnimatedSectionWrapper>
 
       {/* Services Grid Section */}
-      <section className="py-32 bg-background/80 backdrop-blur-sm relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-28 max-w-4xl mx-auto">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-background/80 backdrop-blur-sm relative">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 max-w-4xl mx-auto">
             <Reveal direction="down">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 rounded-full text-primary font-bold text-sm mb-8 border border-primary/20 backdrop-blur-md uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary/10 rounded-full text-primary font-bold text-[10px] sm:text-xs md:text-sm mb-6 sm:mb-8 md:mb-10 border border-primary/20 backdrop-blur-md uppercase tracking-widest">
                 E-commerce Capabilities
               </div>
             </Reveal>
-            <h2 className="text-5xl md:text-8xl font-display font-black mb-10 text-foreground tracking-tighter leading-none uppercase italic">Scale With <span className="text-primary not-italic">Precision</span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-display font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-foreground tracking-tighter leading-none uppercase italic">Scale With <span className="text-primary not-italic">Precision</span></h2>
             <Reveal delay={0.2}>
-              <p className="text-2xl text-muted-foreground font-medium italic font-serif max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-medium italic font-serif max-w-3xl mx-auto px-2">
                 Comprehensive marketplace solutions for ambitious brands aiming for total category authority.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 max-w-7xl mx-auto">
             {amazonServices.map((item, index) => (
               <Reveal key={index} delay={index * 0.1} direction="up">
                 <TiltCard className="h-full">
-                  <div className="group h-full bg-card/40 backdrop-blur-xl p-12 rounded-[3.5rem] border border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl cursor-pointer relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] group-hover:bg-primary/10 transition-colors" />
+                  <div className="group h-full bg-card/40 backdrop-blur-xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12 rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] xl:rounded-[3.5rem] border border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl cursor-pointer relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-32 xl:h-32 bg-primary/5 rounded-bl-[1rem] sm:rounded-bl-[1.5rem] md:rounded-bl-[2rem] lg:rounded-bl-[2.5rem] xl:rounded-bl-[5rem] group-hover:bg-primary/10 transition-colors" />
                     <Magnetic strength={0.2}>
-                      <div className="w-24 h-24 rounded-3xl bg-primary flex items-center justify-center mb-12 shadow-glow group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                        <item.icon className="text-black" size={40} />
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-3xl xl:rounded-3xl bg-primary flex items-center justify-center mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 shadow-glow group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                        <item.icon className="text-black w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:size={40}" />
                       </div>
                     </Magnetic>
-                    <h3 className="text-3xl font-black mb-6 text-foreground group-hover:text-primary transition-colors tracking-tight leading-none italic font-serif uppercase">
+                    <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl md:text-2xl font-black mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-foreground group-hover:text-primary transition-colors tracking-tight leading-none italic font-serif uppercase">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-xl font-medium">
+                    <p className="text-muted-foreground leading-relaxed text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base md:text-lg font-medium">
                       {item.description}
                     </p>
                   </div>
@@ -182,33 +182,33 @@ const EcommerceServices = () => {
       </section>
 
       {/* Framework Section */}
-      <section className="py-48 bg-zinc-950/80 backdrop-blur-md relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 md:py-48 bg-zinc-950/80 backdrop-blur-md relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent shadow-glow" />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-32 max-w-4xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 max-w-4xl mx-auto">
             <Reveal direction="down">
-              <h2 className="text-7xl md:text-8xl lg:text-[12rem] font-display font-black mb-10 text-white tracking-tighter leading-none uppercase italic text-center">The Growth <span className="text-primary not-italic">Mechanism</span></h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl md:text-8xl lg:text-[12rem] font-display font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-white tracking-tighter leading-none uppercase italic text-center">The Growth <span className="text-primary not-italic">Mechanism</span></h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="text-3xl text-white/60 font-medium italic font-serif leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl md:text-3xl text-white/60 font-medium italic font-serif leading-relaxed px-2">
                 A data-driven roadmap to sustainable marketplace authority.
               </p>
             </Reveal>
           </div>
 
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8">
             {frameworkSteps.map((step, index) => (
               <Reveal key={index} delay={index * 0.15} direction="up">
-                <div className="group bg-white/5 backdrop-blur-2xl p-12 rounded-[3.5rem] border border-white/10 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl h-full relative overflow-hidden">
-                  <div className="text-9xl font-display font-black text-primary/5 absolute -top-5 -right-5 group-hover:text-primary/10 transition-all duration-700">
+                <div className="group bg-white/5 backdrop-blur-2xl p-2 sm:p-3 md:p-4 lg:p-6 xl:p-12 rounded-[0.75rem] sm:rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-[3.5rem] border border-white/10 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl h-full relative overflow-hidden">
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-display font-black text-primary/5 absolute -top-2 sm:-top-3 md:-top-4 lg:-top-5 -right-2 sm:-right-3 md:-right-4 lg:-right-5 group-hover:text-primary/10 transition-all duration-700">
                     {step.number}
                   </div>
-                  <div className="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-12 group-hover:bg-primary transition-all duration-500 shadow-glow">
-                    <span className="text-4xl font-black text-primary group-hover:text-black italic">{step.number}</span>
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-20 xl:h-20 rounded-lg sm:rounded-xl md:rounded-2xl bg-primary/20 flex items-center justify-center mb-2 sm:mb-3 md:mb-4 lg:mb-6 xl:mb-12 group-hover:bg-primary transition-all duration-500 shadow-glow">
+                    <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-primary group-hover:text-black italic">{step.number}</span>
                   </div>
-                  <h3 className="text-3xl font-black mb-6 text-white tracking-tight italic leading-none uppercase">{step.title}</h3>
-                  <p className="text-white/60 leading-relaxed text-xl font-medium">
+                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl md:text-2xl font-black mb-1 sm:mb-2 md:mb-3 lg:mb-6 text-white tracking-tight italic leading-none uppercase">{step.title}</h3>
+                  <p className="text-white/60 leading-relaxed text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base md:text-lg font-medium">
                     {step.description}
                   </p>
                 </div>
@@ -219,30 +219,30 @@ const EcommerceServices = () => {
       </section>
 
       {/* Why Nexa Section */}
-      <section className="py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-32 max-w-4xl mx-auto">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 max-w-4xl mx-auto">
             <Reveal direction="down">
-              <h2 className="text-5xl md:text-8xl font-display font-black mb-10 text-foreground tracking-tighter leading-none uppercase italic">The Elite <span className="text-primary not-italic">Standard</span></h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-display font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-foreground tracking-tighter leading-none uppercase italic">The Elite <span className="text-primary not-italic">Standard</span></h2>
             </Reveal>
             <Reveal delay={0.25}>
-              <p className="text-2xl text-muted-foreground font-medium italic font-serif">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-medium italic font-serif px-2">
                 More than a vendor—we are your marketplace growth partner.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-32">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
             {whyBrandsTrust.map((block, index) => (
               <Reveal key={index} delay={index * 0.1} direction="up">
                 <TiltCard className="h-full">
-                  <div className="flex flex-col items-center text-center p-12 h-full bg-card/40 backdrop-blur-xl rounded-[3.5rem] border border-border/50 hover:border-primary/40 transition-all duration-500 shadow-xl group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[3rem] group-hover:bg-primary/10 transition-colors" />
-                    <div className="mb-12 p-8 rounded-full bg-primary/10 text-primary border border-primary/20 group-hover:scale-110 group-hover:bg-primary transition-all duration-500 group-hover:text-black shadow-glow">
-                      <block.icon size={56} strokeWidth={1.5} />
+                  <div className="flex flex-col items-center text-center p-2 sm:p-3 md:p-4 lg:p-6 xl:p-12 h-full bg-card/40 backdrop-blur-xl rounded-[1rem] sm:rounded-[1.5rem] md:rounded-2xl lg:rounded-3xl xl:rounded-[3.5rem] border border-border/50 hover:border-primary/40 transition-all duration-500 shadow-xl group relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 bg-primary/5 rounded-bl-[1rem] sm:rounded-bl-[1.5rem] md:rounded-bl-2xl lg:rounded-bl-3xl xl:rounded-bl-[3rem] group-hover:bg-primary/10 transition-colors" />
+                    <div className="mb-2 sm:mb-3 md:mb-4 lg:mb-6 xl:mb-12 p-2 sm:p-3 md:p-4 lg:p-6 xl:p-8 rounded-full bg-primary/10 text-primary border border-primary/20 group-hover:scale-110 group-hover:bg-primary transition-all duration-500 group-hover:text-black shadow-glow">
+                      <block.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:size={56}" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-3xl font-black mb-6 text-foreground tracking-tight italic uppercase leading-none font-serif">{block.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-xl font-medium">
+                    <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl md:text-2xl font-black mb-1 sm:mb-2 md:mb-3 lg:mb-6 text-foreground tracking-tight italic uppercase leading-none font-serif">{block.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base md:text-lg font-medium">
                       {block.description}
                     </p>
                   </div>
@@ -255,11 +255,11 @@ const EcommerceServices = () => {
             <Magnetic strength={0.3}>
               <Button
                 size="lg"
-                className="group rounded-full px-20 py-12 text-3xl font-black transition-all duration-500 shadow-glow bg-primary text-black italic uppercase tracking-widest"
+                className="group rounded-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 xl:py-12 text-sm sm:text-base md:text-lg lg:text-xl xl:text-3xl font-black transition-all duration-500 shadow-glow bg-primary text-black italic uppercase tracking-widest"
                 onClick={() => navigate('/projects#ecommerce-projects')}
               >
                 Explore Results
-                <ArrowRight className="ml-6 w-12 h-12 group-hover:translate-x-5 transition-transform duration-500" />
+                <ArrowRight className="ml-2 sm:ml-3 md:ml-4 lg:ml-5 xl:ml-6 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-12 xl:h-12 group-hover:translate-x-2 sm:group-hover:translate-x-3 md:group-hover:translate-x-4 lg:group-hover:translate-x-5 transition-transform duration-500" />
               </Button>
             </Magnetic>
           </Reveal>
@@ -267,16 +267,16 @@ const EcommerceServices = () => {
       </section>
 
       {/* Final CTA Section */}
-      <AnimatedSectionWrapper className="py-48 bg-zinc-950/80 backdrop-blur-md">
+      <AnimatedSectionWrapper className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 md:py-48 bg-zinc-950/80 backdrop-blur-md">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-glow" />
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <Reveal direction="down">
-            <h2 className="text-7xl md:text-8xl lg:text-[12rem] font-display font-black mb-12 text-white tracking-tighter leading-none uppercase italic text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl md:text-8xl lg:text-[12rem] font-display font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 text-white tracking-tighter leading-none uppercase italic text-center">
               Ready To <br /><span className="text-primary not-italic">Command?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.25}>
-            <p className="text-2xl md:text-4xl text-white/70 mb-20 max-w-5xl mx-auto leading-relaxed font-serif italic">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl md:text-4xl text-white/70 mb-8 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20 max-w-5xl mx-auto leading-relaxed font-serif italic px-2">
               Let's discuss how we can scale your brand to new heights with a custom framework.
             </p>
           </Reveal>
@@ -284,7 +284,7 @@ const EcommerceServices = () => {
             <Magnetic strength={0.2}>
               <Button
                 size="lg"
-                className="rounded-full px-20 py-12 text-4xl font-black bg-primary text-black hover:bg-primary transition-all duration-500 shadow-glow italic uppercase tracking-tighter"
+                className="rounded-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 xl:py-12 text-sm sm:text-base md:text-lg lg:text-xl xl:text-4xl font-black bg-primary text-black hover:bg-primary transition-all duration-500 shadow-glow italic uppercase tracking-tighter"
                 onClick={() => navigate('/contact')}
               >
                 Initiate Audit
