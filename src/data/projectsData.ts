@@ -373,6 +373,36 @@ export const webDevelopmentProjects = [
         shortDescription: 'Real-time team collaboration and task tracking platform.',
         fullDescription: 'A comprehensive team collaboration platform featuring real-time task tracking, project management dashboards, team communication tools, progress analytics, and seamless integration with popular productivity apps.',
         toolsUsed: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'PostgreSQL', 'Redis']
+    },
+    {
+        id: 116,
+        title: 'Dental Clinic Website',
+        category: 'Healthcare',
+        tags: ['Healthcare', 'Booking', 'Responsive'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1784660859/Screenshot_2026-07-22_000333_rblqwv.png',
+        images: [
+            'https://res.cloudinary.com/dhffgjyra/image/upload/v1784660859/Screenshot_2026-07-22_000333_rblqwv.png',
+            'https://res.cloudinary.com/dhffgjyra/image/upload/v1784660860/Screenshot_2026-07-22_000354_yl9f51.png'
+        ],
+        shortDescription: 'Professional dental clinic website with appointment booking.',
+        fullDescription: 'A modern dental clinic website featuring online appointment booking, service showcases, doctor profiles, patient testimonials, and a clean, professional design that builds trust with potential patients.',
+        toolsUsed: ['React', 'Node.js', 'MongoDB', 'Calendar API'],
+        liveLink: 'https://abdullahprojectfornazeer.vercel.app/'
+    },
+    {
+        id: 117,
+        title: 'Medicine Store Website with SEO',
+        category: 'E-Commerce',
+        tags: ['E-commerce', 'SEO', 'Pharmacy'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1784660858/Screenshot_2026-07-22_000235_fwkvo0.png',
+        images: [
+            'https://res.cloudinary.com/dhffgjyra/image/upload/v1784660858/Screenshot_2026-07-22_000235_fwkvo0.png',
+            'https://res.cloudinary.com/dhffgjyra/image/upload/v1784660857/Screenshot_2026-07-22_000318_uqzmsd.png'
+        ],
+        shortDescription: 'SEO-optimized medicine store with product catalog.',
+        fullDescription: 'A comprehensive medicine store website with SEO optimization, product catalog, search functionality, prescription upload, and secure checkout designed for pharmaceutical e-commerce with full compliance features.',
+        toolsUsed: ['React', 'Next.js', 'SEO', 'Stripe', 'MongoDB'],
+        liveLink: 'https://devapk.com'
     }
 ];
 
