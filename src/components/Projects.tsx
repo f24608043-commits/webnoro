@@ -179,18 +179,18 @@ export const Projects = () => {
           </Reveal>
 
           <div className="space-y-32">
-            {/* AS Campaign Sub-section */}
+            {/* AD Campaign Sub-section */}
             {asCampaignProjects.length > 0 && (
               <div>
                 <Reveal direction="down">
                   <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
-                    <span className="w-16 h-px bg-primary/40" /> AS Campaign
+                    <span className="w-16 h-px bg-primary/40" /> AD Campaign
                   </h3>
                 </Reveal>
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
                   {asCampaignProjects.map((project, idx) => (
                     <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                      <ProjectCard project={project} onViewDetails={openModal} />
+                      <ProjectCard project={project} onViewDetails={openModal} portrait={true} />
                     </Reveal>
                   ))}
                 </div>

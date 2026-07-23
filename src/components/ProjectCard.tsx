@@ -9,9 +9,11 @@ interface ProjectCardProps {
   onViewDetails: (project: Project) => void;
   /** When true, show "Live Demo" instead of "View Details" (Web Dev cards) */
   showLiveDemo?: boolean;
+  /** When true, use portrait aspect ratio (9:16) for the image */
+  portrait?: boolean;
 }
 
-export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false }: ProjectCardProps) => {
+export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, portrait = false }: ProjectCardProps) => {
   const hasLiveLink = Boolean(project.liveLink);
   const hasMultipleImages = project.images && project.images.length > 1;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -48,8 +50,11 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false }: Pr
         'hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5'
       )}
     >
-      {/* Image: 16:9 aspect ratio */}
-      <div className="relative aspect-video overflow-hidden bg-muted">
+      {/* Image: 16:9 aspect ratio or 9:16 portrait if specified */}
+      <div className={cn(
+        'relative overflow-hidden bg-muted',
+        portrait ? 'aspect-[9/16]' : 'aspect-video'
+      )}>
         <img
           src={currentImage}
           alt={project.title}

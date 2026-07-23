@@ -277,6 +277,94 @@ export const digitalMarketingProjects = [
         fullDescription: 'Creative seasonal promotional campaign designed to drive sales and customer engagement during the bon-fire season with compelling visuals and targeted messaging.',
         toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
         results: 'Successful campaign with high engagement and conversion rates.'
+    },
+    {
+        id: 16,
+        title: 'Hiring Chef Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Recruitment', 'Social Media'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373989/Screenshot_2026-06-13_180417_xjjjx2.png',
+        shortDescription: 'Recruitment campaign for hiring chefs.',
+        fullDescription: 'Targeted recruitment campaign focused on attracting qualified chef candidates through social media advertising and job platforms.',
+        toolsUsed: ['Meta Ads', 'LinkedIn', 'Creative Design', 'Analytics'],
+        results: 'Successful recruitment with high-quality candidate applications.'
+    },
+    {
+        id: 17,
+        title: 'Hiring Chef New Engagement Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Recruitment', 'Engagement'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373973/Screenshot_2026-06-13_180400_zs5oc3.png',
+        shortDescription: 'Enhanced recruitment campaign for chef positions.',
+        fullDescription: 'Improved recruitment campaign with enhanced engagement strategies to attract top chef talent through targeted advertising.',
+        toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
+        results: 'Increased engagement and higher quality applications.'
+    },
+    {
+        id: 18,
+        title: 'Skill Barista Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Recruitment', 'Training'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373988/Screenshot_2026-06-13_180412_rznslw.png',
+        shortDescription: 'Campaign for skilled barista recruitment.',
+        fullDescription: 'Specialized recruitment campaign targeting skilled baristas for hospitality positions with engaging creative content.',
+        toolsUsed: ['Meta Ads', 'Instagram', 'Creative Design', 'Analytics'],
+        results: 'Successful recruitment of skilled barista candidates.'
+    },
+    {
+        id: 19,
+        title: 'Skill Barista New Engagement Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Recruitment', 'Engagement'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373953/Screenshot_2026-06-13_180326_celcsa.png',
+        shortDescription: 'Enhanced barista recruitment campaign.',
+        fullDescription: 'Optimized recruitment campaign with improved engagement strategies for attracting skilled barista candidates.',
+        toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
+        results: 'Higher engagement and better candidate quality.'
+    },
+    {
+        id: 20,
+        title: 'Takeaway Discount',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Promotional', 'Food'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373945/Screenshot_2026-06-13_180319_iaozpv.png',
+        shortDescription: 'Promotional discount campaign for takeaway.',
+        fullDescription: 'Attractive promotional campaign offering discounts on takeaway orders to drive customer acquisition and repeat business.',
+        toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
+        results: 'Increased order volume and customer acquisition.'
+    },
+    {
+        id: 21,
+        title: 'Havenly Special Deals',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Promotional', 'Special Offers'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373940/Screenshot_2026-06-13_180313_rhcu8v.png',
+        shortDescription: 'Special deals promotional campaign.',
+        fullDescription: 'Engaging promotional campaign featuring special deals and offers to drive sales and customer engagement.',
+        toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
+        results: 'Successful promotion with high customer response.'
+    },
+    {
+        id: 22,
+        title: 'Techpreneur New Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Tech', 'Entrepreneurship'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373934/Screenshot_2026-06-13_180307_t67wv5.png',
+        shortDescription: 'Campaign targeting tech entrepreneurs.',
+        fullDescription: 'Strategic campaign designed to engage tech entrepreneurs with compelling messaging and targeted advertising.',
+        toolsUsed: ['Meta Ads', 'LinkedIn', 'Google Ads', 'Analytics'],
+        results: 'Strong engagement from target audience.'
+    },
+    {
+        id: 23,
+        title: 'Furnuretify Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Furniture', 'E-commerce'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373932/Screenshot_2026-06-13_180246_mfq3q4.png',
+        shortDescription: 'Furniture e-commerce promotional campaign.',
+        fullDescription: 'Creative promotional campaign for furniture e-commerce brand driving awareness and sales through targeted advertising.',
+        toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
+        results: 'Increased brand awareness and sales conversion.'
     }
 ];
 
