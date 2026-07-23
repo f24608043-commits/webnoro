@@ -107,7 +107,7 @@ export const Projects = () => {
       <div className="sticky top-20 z-40 bg-background/80 backdrop-blur-2xl border-b border-border/50 py-6">
         <div className="container mx-auto px-6">
           <div className="flex justify-center gap-12">
-            {['ecommerce-projects', 'digital-marketing-projects', 'web-development-projects'].map((id) => (
+            {['web-development-projects', 'digital-marketing-projects', 'ecommerce-projects'].map((id) => (
               <Magnetic key={id} strength={0.1}>
                 <a href={`#${id}`} className="text-sm font-black uppercase tracking-widest hover:text-primary transition-colors cursor-pointer">
                   {id === 'ecommerce-projects' ? 'ecom' : id.split('-')[0]}
@@ -119,66 +119,6 @@ export const Projects = () => {
       </div>
 
       <div className="container mx-auto px-6 py-32 space-y-48">
-        {/* E-commerce Section */}
-        <section id="ecommerce-projects" className="scroll-mt-48">
-          <Reveal direction="left">
-            <div className="mb-20">
-              <h2 className="text-5xl md:text-7xl font-display font-black mb-6 tracking-tight italic">E-commerce <span className="text-primary not-italic">Projects</span></h2>
-              <p className="text-2xl text-muted-foreground font-medium max-w-2xl italic font-serif">Marketplace Growth, Account Management & Performance Advertising</p>
-            </div>
-          </Reveal>
-
-          <div className="space-y-32">
-            <div>
-              <Reveal direction="down">
-                <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
-                  <span className="w-16 h-px bg-primary/40" /> Accounts Managed
-                </h3>
-              </Reveal>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-                {ecommerceAccounts.map((project, idx) => (
-                  <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                    <ProjectCard project={project} onViewDetails={openModal} />
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <Reveal direction="down">
-                <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
-                  <span className="w-16 h-px bg-primary/40" /> Marketing
-                </h3>
-              </Reveal>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-                {ecommerceMarketing.map((project, idx) => (
-                  <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                    <ProjectCard project={project} onViewDetails={openModal} />
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Marketing Section */}
-        <section id="digital-marketing-projects" className="scroll-mt-48">
-          <Reveal direction="left">
-            <div className="mb-20">
-              <h2 className="text-5xl md:text-7xl font-display font-black mb-6 tracking-tight italic">Marketing <span className="text-primary not-italic">Projects</span></h2>
-              <p className="text-2xl text-muted-foreground font-medium max-w-2xl italic font-serif">Performance Campaigns, Social Media & Paid Advertising</p>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-            {digitalMarketingProjects.map((project, idx) => (
-              <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                <ProjectCard project={project} onViewDetails={openModal} />
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
         {/* Web Development Section */}
         <section id="web-development-projects" className="scroll-mt-48">
           <Reveal direction="left">
@@ -224,6 +164,66 @@ export const Projects = () => {
                 </div>
               </div>
             )}
+          </div>
+        </section>
+
+        {/* Marketing Section */}
+        <section id="digital-marketing-projects" className="scroll-mt-48">
+          <Reveal direction="left">
+            <div className="mb-20">
+              <h2 className="text-5xl md:text-7xl font-display font-black mb-6 tracking-tight italic">Marketing <span className="text-primary not-italic">Projects</span></h2>
+              <p className="text-2xl text-muted-foreground font-medium max-w-2xl italic font-serif">Performance Campaigns, Social Media & Paid Advertising</p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+            {digitalMarketingProjects.map((project, idx) => (
+              <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                <ProjectCard project={project} onViewDetails={openModal} />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* E-commerce Section */}
+        <section id="ecommerce-projects" className="scroll-mt-48">
+          <Reveal direction="left">
+            <div className="mb-20">
+              <h2 className="text-5xl md:text-7xl font-display font-black mb-6 tracking-tight italic">E-commerce <span className="text-primary not-italic">Projects</span></h2>
+              <p className="text-2xl text-muted-foreground font-medium max-w-2xl italic font-serif">Marketplace Growth, Account Management & Performance Advertising</p>
+            </div>
+          </Reveal>
+
+          <div className="space-y-32">
+            <div>
+              <Reveal direction="down">
+                <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                  <span className="w-16 h-px bg-primary/40" /> Accounts Managed
+                </h3>
+              </Reveal>
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                {ecommerceAccounts.map((project, idx) => (
+                  <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                    <ProjectCard project={project} onViewDetails={openModal} />
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Reveal direction="down">
+                <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                  <span className="w-16 h-px bg-primary/40" /> Marketing
+                </h3>
+              </Reveal>
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                {ecommerceMarketing.map((project, idx) => (
+                  <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                    <ProjectCard project={project} onViewDetails={openModal} />
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
