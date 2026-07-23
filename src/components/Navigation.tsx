@@ -18,7 +18,7 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
+ 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (isMobileMenuOpen && !(e.target as HTMLElement).closest('nav')) {
@@ -54,6 +54,14 @@ export const Navigation = () => {
     navigate(href);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent, href: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      navigate(href);
+    }
+  };
+
   const isActive = (href: string) => {
     if (href === '/') return location.pathname === '/';
     return location.pathname.startsWith(href);
@@ -61,6 +69,8 @@ export const Navigation = () => {
 
   return (
     <nav
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
         ? 'bg-background/80 backdrop-blur-md shadow-lg border-b border-border'
         : 'bg-transparent'
@@ -69,20 +79,29 @@ export const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" onClick={(e) => handleClick(e, '/')} className="group">
+          <a
+            href="/"
+            onClick={(e) => handleClick(e, '/')}
+            onKeyDown={(e) => handleKeyDown(e, '/')}
+            className="group"
+            aria-label="Nexa Growth Home"
+          >
             <h1 className="text-2xl md:text-3xl font-black text-[#1a9e6e] hover:scale-105 transition-transform duration-300 font-display">
               NEXA GROWTH
             </h1>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6" role="menubar">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className={`text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isActive(link.href)
+                onKeyDown={(e) => handleKeyDown(e, link.href)}
+                role="menuitem"
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                className={`text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded ${isActive(link.href)
                   ? 'text-primary after:scale-x-100'
                   : 'text-foreground/70 hover:text-primary'
                   }`}
@@ -98,7 +117,10 @@ export const Navigation = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground hover:text-primary transition-colors duration-300"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              className="text-foreground hover:text-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded p-1"
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -121,6 +143,10 @@ export const Navigation = () => {
               
               {/* Slide-in Menu */}
               <motion.div
+                id="mobile-menu"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile navigation menu"
                 initial={{ x: '100%' }}
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
@@ -131,22 +157,26 @@ export const Navigation = () => {
                   {/* Close Button */}
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="absolute top-4 right-4 p-2 rounded-lg hover:bg-muted transition-colors"
+                    aria-label="Close menu"
+                    className="absolute top-4 right-4 p-2 rounded-lg hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
                   >
                     <X size={24} />
                   </button>
 
                   {/* Menu Items */}
-                  <div className="flex flex-col space-y-2 mt-8">
+                  <div className="flex flex-col space-y-2 mt-8" role="menu">
                     {navLinks.map((link, index) => (
                       <motion.a
                         key={link.name}
                         href={link.href}
                         onClick={(e) => handleClick(e, link.href)}
+                        onKeyDown={(e) => handleKeyDown(e, link.href)}
+                        role="menuitem"
+                        aria-current={isActive(link.href) ? 'page' : undefined}
                         initial={{ x: 20, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: index * 0.05 }}
-                        className={`font-medium text-base py-3 px-4 rounded-lg transition-all duration-300 ${
+                        className={`font-medium text-base py-3 px-4 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background ${
                           isActive(link.href)
                             ? 'bg-primary/10 text-primary'
                             : 'text-foreground/70 hover:bg-muted hover:text-foreground'

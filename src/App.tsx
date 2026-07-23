@@ -34,6 +34,27 @@ import DataAnalytics from "./pages/services/DataAnalytics";
 import WholesaleArbitrage from "./pages/services/WholesaleArbitrage";
 import ExtraPremium from "./pages/services/ExtraPremium";
 
+// SEO/AIEO pages
+import TechnologiesOverview from "./pages/technologies/TechnologiesOverview";
+import TechnologyDetail from "./pages/technologies/TechnologyDetail";
+import IndustriesOverview from "./pages/industries/IndustriesOverview";
+import IndustryDetail from "./pages/industries/IndustryDetail";
+import LocationsOverview from "./pages/locations/LocationsOverview";
+import LocationDetail from "./pages/locations/LocationDetail";
+import ResearchOverview from "./pages/research/ResearchOverview";
+import ResearchCategoryDetail from "./pages/research/ResearchCategoryDetail";
+import ResourcesOverview from "./pages/resources/ResourcesOverview";
+
+// Legal pages
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import TermsOfService from "./pages/legal/TermsOfService";
+
+// Tools pages
+import WebsiteCostCalculator from "./pages/tools/WebsiteCostCalculator";
+
+// Authors pages
+import AuthorDetail from "./pages/authors/AuthorDetail";
+
 const App = () => (
   <TooltipProvider>
     <Toaster />
@@ -75,7 +96,8 @@ const App = () => (
                       <Route path="/content" element={<Content />} />
 
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/project/:category" element={<ProjectDetail />} />
+          <Route path="/projects/:category" element={<ProjectDetail />} />
+          <Route path="/projects/:category/:slug" element={<ProjectDetail />} />
           <Route path="/ecommerce-projects" element={<ProjectsPage />} />
           <Route path="/amazon-projects" element={<Navigate to="/ecommerce-projects" replace />} />
 
@@ -87,6 +109,28 @@ const App = () => (
 
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+
+          {/* SEO/AIEO Routes */}
+          <Route path="/technologies" element={<TechnologiesOverview />} />
+          <Route path="/technologies/:slug" element={<TechnologyDetail />} />
+          <Route path="/industries" element={<IndustriesOverview />} />
+          <Route path="/industries/:slug" element={<IndustryDetail />} />
+          <Route path="/locations" element={<LocationsOverview />} />
+          <Route path="/locations/:slug" element={<LocationDetail />} />
+          <Route path="/research" element={<ResearchOverview />} />
+          <Route path="/research/category/:categoryId" element={<ResearchCategoryDetail />} />
+          <Route path="/resources" element={<ResourcesOverview />} />
+
+          {/* Legal Routes */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+
+          {/* Tools Routes */}
+          <Route path="/tools/website-cost-calculator" element={<WebsiteCostCalculator />} />
+
+          {/* Authors Routes */}
+          <Route path="/authors/:authorId" element={<AuthorDetail />} />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

@@ -17,6 +17,11 @@ export const Footer = () => {
     { name: 'Contact Us', href: '/contact' },
   ];
 
+  const legalLinks = [
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms of Service', href: '/terms-of-service' },
+  ];
+
   const servicesData = [
     {
       id: 'digital-marketing',
@@ -115,9 +120,20 @@ export const Footer = () => {
 
         {/* Bottom Copyright Strip */}
         <div className="border-t border-green-500/10 mt-8 sm:mt-12 md:mt-16 pt-6 sm:pt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">
+          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
             {currentYear} NexaGrowth.dev — All Rights Reserved.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 text-gray-500 text-xs sm:text-sm mb-2">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="hover:text-green-400 transition-colors duration-300"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
           <p className="text-gray-500 text-xs sm:text-sm">
             A Product by <span className="text-green-400 font-medium">Nexa Growth</span>
           </p>

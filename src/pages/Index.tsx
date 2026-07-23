@@ -8,6 +8,9 @@ import { TechStack } from '@/components/TechStack';
 import { Contact } from '@/components/Contact';
 import { Button } from '@/components/ui/button';
 import { StickyFloatingCTA } from '@/components/StickyFloatingCTA';
+import { StructuredData } from '@/components/StructuredData';
+import { CTA } from '@/components/CTA';
+import { InternationalSEO } from '@/components/InternationalSEO';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ShoppingCart, Megaphone, Globe, ArrowRight, Search, BarChart3, Rocket, Settings } from 'lucide-react';
@@ -50,6 +53,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <InternationalSEO canonicalUrl="https://nexagrowth.com/" />
+      <StructuredData />
       <Navigation />
       {/* SEO H1 - Hidden visually but accessible to search engines */}
       <h1 className="sr-only">Nexa Growth - E-commerce & Digital Marketing Agency</h1>
@@ -61,6 +66,27 @@ const Index = () => {
           <p className="text-lg text-muted-foreground leading-relaxed">
             Nexa Growth is a full-service <strong className="text-foreground">eCommerce growth agency</strong> helping brands scale on platforms like Amazon, eBay, Walmart, and Shopify. We provide digital marketing and eCommerce growth services in Pakistan, UK, USA, and globally. Specializing in <strong className="text-foreground">SEO, Google Ads, paid ads, and AI-powered automation</strong> systems designed to increase conversions and maximize ROI.
           </p>
+        </div>
+      </section>
+
+      {/* AIEO: Definitions and Summary Section */}
+      <section className="py-12 bg-muted/30" aria-labelledby="definitions-heading">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 id="definitions-heading" className="sr-only">Key Definitions and Services</h2>
+          <div className="space-y-6">
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">What is E-commerce Growth?</h3>
+              <p className="text-muted-foreground">E-commerce growth involves strategic optimization of online sales channels to increase revenue, expand market reach, and improve customer acquisition and retention through data-driven marketing, platform optimization, and automation.</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">Digital Marketing Services Overview</h3>
+              <p className="text-muted-foreground">Our digital marketing encompasses SEO (Search Engine Optimization), paid advertising (Google Ads, Facebook Ads), content marketing, social media management, and conversion rate optimization to drive qualified traffic and maximize return on ad spend.</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">Multi-Marketplace Management</h3>
+              <p className="text-muted-foreground">We manage your presence across Amazon, eBay, Walmart, Shopify, and other marketplaces with optimized product listings, inventory management, pricing strategies, and performance analytics to maximize sales across all channels.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -328,53 +354,16 @@ const Index = () => {
       <Skills />
       <TechStack />
 
-      {/* Final CTA Section */}
-      <AnimatedSectionWrapper className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.2),transparent_70%)]" />
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.15),transparent_70%)]" />
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <Reveal direction="down">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black mb-4 sm:mb-6 md:mb-8 text-white tracking-tighter leading-tight uppercase italic">
-              Ready to Grow <br /><span className="text-primary not-italic">Your Revenue?</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.3}>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/70 font-medium font-serif italic max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-14 lg:mb-16 leading-relaxed px-2">
-              Book a Free Strategy Call and get a custom growth plan for your business.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center">
-              <Magnetic strength={0.2}>
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-black font-black uppercase tracking-widest italic px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 xl:py-8 text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl rounded-full shadow-glow transition-all"
-                  onClick={() => navigate('/contact')}
-                >
-                  Book Free Strategy Call
-                </Button>
-              </Magnetic>
-              <Magnetic strength={0.2}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-black font-black uppercase tracking-widest italic px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 xl:py-8 text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl rounded-full transition-all backdrop-blur-md"
-                  onClick={() => {
-                    const message = encodeURIComponent("Hi, I want to scale my business. Can you guide me?");
-                    window.open(`https://wa.me/923175533762?text=${message}`, '_blank');
-                  }}
-                >
-                  Chat on WhatsApp
-                </Button>
-              </Magnetic>
-            </div>
-          </Reveal>
-        </div>
-      </AnimatedSectionWrapper>
+      {/* Context-Aware CTA */}
+      <CTA
+        title="Ready to Grow Your Revenue?"
+        description="Book a Free Strategy Call and get a custom growth plan for your business."
+        primaryText="Book Free Strategy Call"
+        primaryLink="/contact"
+        secondaryText="View Our Services"
+        secondaryLink="/services"
+        variant="full-width"
+      />
 
       <StickyFloatingCTA />
       <Footer />

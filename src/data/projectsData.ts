@@ -403,6 +403,51 @@ export const webDevelopmentProjects = [
         fullDescription: 'A comprehensive medicine store website with SEO optimization, product catalog, search functionality, prescription upload, and secure checkout designed for pharmaceutical e-commerce with full compliance features.',
         toolsUsed: ['React', 'Next.js', 'SEO', 'Stripe', 'MongoDB'],
         liveLink: 'https://devapk.com'
+    },
+    {
+        id: 118,
+        title: 'Clothing (Super Daddio)',
+        category: 'Shopify',
+        tags: ['Shopify', 'E-commerce', 'Clothing'],
+        image: 'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820105/Screenshot_2026-07-23_190724_pypkup.png',
+        images: [
+            'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820105/Screenshot_2026-07-23_190724_pypkup.png',
+            'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820093/Screenshot_2026-07-23_190735_g51j7o.png'
+        ],
+        shortDescription: 'Modern Shopify clothing store with custom theme.',
+        fullDescription: 'A stylish Shopify clothing store featuring custom theme development, product collections, seamless checkout experience, and mobile-responsive design optimized for fashion e-commerce.',
+        toolsUsed: ['Shopify', 'Liquid', 'CSS', 'JavaScript'],
+        liveLink: 'https://www.superdaddio.com/'
+    },
+    {
+        id: 119,
+        title: 'Clothing Brand (Solo Fashion)',
+        category: 'Shopify',
+        tags: ['Shopify', 'E-commerce', 'Fashion'],
+        image: 'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820117/Screenshot_2026-07-23_190905_olcw0g.png',
+        images: [
+            'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820117/Screenshot_2026-07-23_190905_olcw0g.png',
+            'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820102/Screenshot_2026-07-23_190918_bfnphs.png'
+        ],
+        shortDescription: 'Premium fashion brand Shopify store.',
+        fullDescription: 'A premium fashion brand Shopify store with elegant design, product showcases, collection management, and optimized shopping experience for fashion-conscious customers.',
+        toolsUsed: ['Shopify', 'Liquid', 'Tailwind CSS', 'JavaScript'],
+        liveLink: 'https://solofashion.co.uk/'
+    },
+    {
+        id: 120,
+        title: 'Clothing Brand (The Hang)',
+        category: 'Shopify',
+        tags: ['Shopify', 'E-commerce', 'Streetwear'],
+        image: 'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820090/Screenshot_2026-07-23_190932_flkcwt.png',
+        images: [
+            'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820090/Screenshot_2026-07-23_190932_flkcwt.png',
+            'https://res.cloudinary.com/da1lnrcuv/image/upload/v1784820095/Screenshot_2026-07-23_190959_bvu2xw.png'
+        ],
+        shortDescription: 'Streetwear clothing brand Shopify store.',
+        fullDescription: 'A trendy streetwear clothing brand Shopify store featuring bold design, product galleries, size guides, and a seamless checkout experience tailored for the fashion-forward demographic.',
+        toolsUsed: ['Shopify', 'Liquid', 'CSS', 'JavaScript'],
+        liveLink: 'https://shopthehang.com/'
     }
 ];
 

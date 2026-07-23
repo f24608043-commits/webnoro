@@ -68,6 +68,8 @@ export const Projects = () => {
 
   const ecommerceAccounts = ecommerceProjects.filter(p => p.category === 'Account Management');
   const ecommerceMarketing = ecommerceProjects.filter(p => p.category === 'Amazon Marketing');
+  const shopifyProjects = webDevelopmentProjects.filter(p => p.category === 'Shopify');
+  const otherWebProjects = webDevelopmentProjects.filter(p => p.category !== 'Shopify');
 
   return (
     <section className="bg-transparent relative min-h-screen overflow-hidden">
@@ -186,12 +188,42 @@ export const Projects = () => {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-            {webDevelopmentProjects.map((project, idx) => (
-              <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                <ProjectCard project={project} onViewDetails={openModal} showLiveDemo />
-              </Reveal>
-            ))}
+          <div className="space-y-32">
+            {/* Other Web Projects Sub-section */}
+            {otherWebProjects.length > 0 && (
+              <div>
+                <Reveal direction="down">
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                    <span className="w-16 h-px bg-primary/40" /> Custom Web Applications
+                  </h3>
+                </Reveal>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                  {otherWebProjects.map((project, idx) => (
+                    <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                      <ProjectCard project={project} onViewDetails={openModal} showLiveDemo />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Shopify Stores Sub-section */}
+            {shopifyProjects.length > 0 && (
+              <div>
+                <Reveal direction="down">
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                    <span className="w-16 h-px bg-primary/40" /> Shopify Stores
+                  </h3>
+                </Reveal>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                  {shopifyProjects.map((project, idx) => (
+                    <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                      <ProjectCard project={project} onViewDetails={openModal} showLiveDemo />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 

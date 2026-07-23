@@ -14,12 +14,12 @@ import {
 } from '@/data/projectsData';
 
 const ProjectDetail = () => {
-  const { category } = useParams<{ category: string }>();
+  const { category, slug } = useParams<{ category: string; slug?: string }>();
   const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [category]);
+  }, [category, slug]);
 
   // Map URL-friendly category names to data arrays
   const categoryMap: Record<string, { title: string; description: string; projects: any[] }> = {
@@ -61,7 +61,163 @@ const ProjectDetail = () => {
 
   const { title, description, projects } = categoryData;
 
-  // SEO metadata
+  // If slug is provided, show individual project detail
+  if (slug) {
+    const project = projects.find(p => p.id === slug || p.title.toLowerCase().replace(/\s+/g, '-') === slug);
+    
+    if (!project) {
+      return (
+        <div className="min-h-screen bg-background">
+          <Navigation />
+          <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Project Not Found</h1>
+            <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base md:text-lg">The project you're looking for doesn't exist.</p>
+            <Button onClick={() => navigate(`/projects/${category}`)} className="text-sm sm:text-base">
+              <ArrowLeft className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              Back to {title}
+            </Button>
+          </div>
+          <Footer />
+        </div>
+      );
+    }
+
+    // SEO metadata for individual project
+    const projectSeoTitle = `${project.title} | ${title} | Nexa Growth`;
+    const projectSeoDescription = project.description || project.title;
+    const projectSeoUrl = `https://nexagrowth.com/projects/${category}/${slug}`;
+
+    return (
+      <>
+        <Helmet>
+          <title>{projectSeoTitle}</title>
+          <meta name="description" content={projectSeoDescription} />
+          <link rel="canonical" href={projectSeoUrl} />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content={projectSeoTitle} />
+          <meta property="og:description" content={projectSeoDescription} />
+          <meta property="og:url" content={projectSeoUrl} />
+          <meta property="og:type" content="website" />
+          {project.image && <meta property="og:image" content={project.image} />}
+          
+          {/* Twitter Card */}
+          <meta name="twitter:title" content={projectSeoTitle} />
+          <meta name="twitter:description" content={projectSeoDescription} />
+          {project.image && <meta name="twitter:image" content={project.image} />}
+          
+          {/* Structured Data */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": project.title,
+              "description": projectSeoDescription,
+              "url": projectSeoUrl,
+              "image": project.image,
+              "author": {
+                "@type": "Organization",
+                "name": "Nexa Growth Solutions"
+              }
+            })}
+          </script>
+        </Helmet>
+
+        <Navigation />
+        
+        <article className="pt-6 sm:pt-8 md:pt-12 pb-12 sm:pb-16 md:pb-20">
+          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+            {/* Back Button */}
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate(`/projects/${category}`)}
+              className="mb-4 sm:mb-6 text-sm sm:text-base"
+            >
+              <ArrowLeft className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              Back to {title}
+            </Button>
+
+            {/* Project Header */}
+            <Reveal direction="down">
+              <div className="mb-8 sm:mb-10 md:mb-12">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display font-black mb-3 sm:mb-4 md:mb-6 tracking-tight italic">
+                  {project.title}
+                </h1>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-medium max-w-3xl italic font-serif">
+                  {project.description}
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Project Image */}
+            {project.image && (
+              <Reveal direction="up" delay={0.1}>
+                <div className="mb-8 sm:mb-10 md:mb-12 rounded-xl sm:rounded-2xl overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </Reveal>
+            )}
+
+            {/* Project Details */}
+            <Reveal direction="up" delay={0.2}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
+                {project.technologies && (
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-4">Technologies</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech: string, idx: number) => (
+                        <span key={idx} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {project.liveLink && (
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-4">Live Project</h3>
+                    <Button
+                      onClick={() => window.open(project.liveLink, '_blank')}
+                      className="w-full"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Live Site
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </Reveal>
+
+            {/* CTA Section */}
+            <Reveal direction="up" delay={0.3}>
+              <div className="text-center p-6 sm:p-8 md:p-10 lg:p-12 bg-primary/5 rounded-xl sm:rounded-xl md:rounded-2xl border border-primary/20">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 md:mb-4">Like This Project?</h2>
+                <p className="text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+                  Let's build something similar for your business. Get in touch to discuss your project requirements.
+                </p>
+                <Button
+                  size="lg"
+                  onClick={() => navigate('/contact')}
+                  className="bg-primary text-black hover:bg-primary/90 text-sm sm:text-base md:text-lg"
+                >
+                  Start Your Project
+                  <ExternalLink className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                </Button>
+              </div>
+            </Reveal>
+          </div>
+        </article>
+
+        <Footer />
+      </>
+    );
+  }
+
+  // SEO metadata for category page
   const seoTitle = `${title} | Nexa Growth`;
   const seoDescription = description;
   const seoUrl = `https://nexagrowth.com/project/${category}`;

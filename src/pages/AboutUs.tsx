@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { WhoWeServe } from '@/components/WhoWeServe';
 import { Stats } from '@/components/Stats';
 import { LogoLoop } from '@/components/ui/LogoLoop';
-import { Target, Zap, Award, BarChart3, Globe, Rocket } from 'lucide-react';
+import { Target, Zap, Award, BarChart3, Globe, Rocket, CheckCircle, TrendingUp, Users, Clock, Shield } from 'lucide-react';
 import { Reveal } from '@/components/animations/Reveal';
 import { TiltCard } from '@/components/animations/TiltCard';
 import { Magnetic } from '@/components/animations/Magnetic';
@@ -12,24 +12,22 @@ import { gsap, useGSAP } from '@/lib/gsap';
 import AnimatedSectionWrapper from '@/components/AnimatedSectionWrapper';
 import { TeamMemberCard } from '@/components/TeamMember';
 import { teamMembers } from '@/data/projectsData';
+import { Breadcrumb } from '@/components/Breadcrumb';
+import { ContactCTA } from '@/components/CTA';
+import { InternationalSEO } from '@/components/InternationalSEO';
 
 const AboutUs = () => {
   const heroRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const subheadlineRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => { 
-    window.scrollTo(0, 0); 
-    // SEO: Update page title
-    document.title = "About Us | Nexa Growth";
-    // SEO: Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Meet the Nexa Growth team. We are a high-performance digital agency specializing in e-commerce acceleration, marketing, and technology solutions.");
-    }
-  }, []);
+  const breadcrumbItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' }
+  ];
 
   useEffect(() => { 
+    window.scrollTo(0, 0); 
     // SEO: Update page title
     document.title = "About Us | Nexa Growth";
     // SEO: Update meta description
@@ -68,10 +66,16 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <InternationalSEO canonicalUrl="https://nexagrowth.com/about" />
       <Navigation />
 
+      {/* Breadcrumb */}
+      <div className="pt-20 container mx-auto px-4 sm:px-6">
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
+
       {/* Hero Section */}
-      <AnimatedSectionWrapper ref={heroRef} className="pt-32 sm:pt-40 md:pt-48 lg:pt-56 xl:pt-64 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32 hero-antigravity">
+      <AnimatedSectionWrapper ref={heroRef} className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-24 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32 hero-antigravity">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] md:w-[600px] lg:w-[800px] h-[300px] sm:h-[500px] md:h-[600px] lg:h-[800px] bg-primary rounded-full blur-[100px] sm:blur-[130px] md:blur-[145px] lg:blur-[160px] animate-float" />
           <div className="absolute bottom-1/4 right-1/4 w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[250px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-accent rounded-full blur-[90px] sm:blur-[115px] md:blur-[130px] lg:blur-[140px] animate-pulse" />
@@ -196,6 +200,81 @@ const AboutUs = () => {
 
       <WhoWeServe />
 
+      {/* Our Process */}
+      <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-background/50 backdrop-blur-sm relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-18 lg:mb-20">
+            <Reveal direction="down">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-display font-black mb-4 sm:mb-6 tracking-tight italic uppercase">
+                Our <span className="text-primary not-italic">Process</span>
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto italic font-serif px-2">
+                A proven methodology for sustainable growth
+              </p>
+            </Reveal>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 max-w-7xl mx-auto">
+            {[
+              { icon: Target, title: 'Discovery', desc: 'Deep dive into your business, market, and goals' },
+              { icon: TrendingUp, title: 'Strategy', desc: 'Data-driven roadmap with clear KPIs and milestones' },
+              { icon: Zap, title: 'Execution', desc: 'Rapid implementation with continuous optimization' },
+              { icon: CheckCircle, title: 'Scale', desc: 'Systematic expansion and performance maximization' }
+            ].map((step, index) => (
+              <Reveal key={index} delay={index * 0.1} direction="up">
+                <TiltCard>
+                  <div className="bg-card/40 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-500 group h-full">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                      <step.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:text-black" />
+                    </div>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">{step.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">{step.desc}</p>
+                  </div>
+                </TiltCard>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Awards */}
+      <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] md:w-[600px] lg:w-[800px] h-[300px] sm:h-[500px] md:h-[600px] lg:h-[800px] bg-primary rounded-full blur-[100px] sm:blur-[130px] md:blur-[145px] lg:blur-[160px] animate-float" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 md:mb-18 lg:mb-20">
+            <Reveal direction="down">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-display font-black mb-4 sm:mb-6 tracking-tight italic uppercase">
+                Recognitions & <span className="text-primary not-italic">Certifications</span>
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto italic font-serif px-2">
+                Industry recognition for excellence in digital growth
+              </p>
+            </Reveal>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
+            {[
+              { icon: Award, title: 'Google Partner', desc: 'Certified Google Ads Partner' },
+              { icon: Shield, title: 'Meta Certified', desc: 'Facebook & Instagram Advertising' },
+              { icon: TrendingUp, title: 'Amazon SPN', desc: 'Amazon Service Provider Network' },
+              { icon: Users, title: 'HubSpot Partner', desc: 'Inbound Marketing Certified' },
+              { icon: Clock, title: '24/7 Support', desc: 'Round-the-clock client support' },
+              { icon: Globe, title: 'Global Reach', desc: 'Serving clients worldwide' }
+            ].map((cert, index) => (
+              <Reveal key={index} delay={index * 0.1} direction="up">
+                <div className="bg-card/40 backdrop-blur-xl rounded-xl p-4 sm:p-6 border border-border/50 hover:border-primary/50 transition-all duration-500 text-center group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
+                    <cert.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-black" />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-bold mb-1 sm:mb-2">{cert.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{cert.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Edge */}
       <AnimatedSectionWrapper className="py-24 sm:py-32 md:py-40 lg:py-44 xl:py-48 bg-zinc-950/80 backdrop-blur-md">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -230,6 +309,8 @@ const AboutUs = () => {
           </div>
         </div>
       </AnimatedSectionWrapper>
+
+      <ContactCTA />
 
       <Footer />
     </div>

@@ -12,5 +12,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
-Sitemap: https://nexagrowthsolution.com/sitemap.xml
+Sitemap: https://nexagrowth.com/sitemap.xml
+Sitemap: https://nexagrowth.com/sitemap-blog.xml
+Sitemap: https://nexagrowth.com/sitemap-projects.xml
