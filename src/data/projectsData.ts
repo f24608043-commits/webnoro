@@ -343,17 +343,6 @@ export const webDevelopmentProjects = [
         toolsUsed: ['NestJS', 'Supabase', 'JWT', 'Swagger', 'PostgreSQL']
     },
     {
-        id: 113,
-        title: 'JavaScript Tetris Game',
-        category: 'Game Dev',
-        tags: ['JavaScript', 'Game', 'Vanilla JS'],
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1779080891/Screenshot_2026-05-17_125021_-_Copy_y4mypi.png',
-        shortDescription: 'Fully functional Tetris in vanilla JavaScript.',
-        fullDescription: 'A fully functional Tetris game built in vanilla JavaScript with smooth keyboard controls, real-time score tracking, level progression system, and a clean retro-style interface that runs in the browser.',
-        toolsUsed: ['Vanilla JavaScript', 'CSS3', 'HTML5 Canvas', 'Web Audio API'],
-        liveLink: 'https://tetris-game-pi-ashy.vercel.app/'
-    },
-    {
         id: 114,
         title: 'Social Reading Platform',
         category: 'EdTech',
