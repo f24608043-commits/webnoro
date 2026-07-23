@@ -10,8 +10,6 @@ import { TiltCard } from '@/components/animations/TiltCard';
 import { Magnetic } from '@/components/animations/Magnetic';
 import { gsap, useGSAP } from '@/lib/gsap';
 import AnimatedSectionWrapper from '@/components/AnimatedSectionWrapper';
-import { TeamMemberCard } from '@/components/TeamMember';
-import { teamMembers } from '@/data/projectsData';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ContactCTA } from '@/components/CTA';
 import { InternationalSEO } from '@/components/InternationalSEO';
@@ -127,31 +125,6 @@ const AboutUs = () => {
                 </p>
               </div>
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Members */}
-      <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] md:w-[600px] lg:w-[800px] h-[300px] sm:h-[500px] md:h-[600px] lg:h-[800px] bg-primary rounded-full blur-[100px] sm:blur-[130px] md:blur-[145px] lg:blur-[160px] animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[250px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-accent rounded-full blur-[90px] sm:blur-[115px] md:blur-[130px] lg:blur-[140px] animate-pulse" />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-18 lg:mb-20">
-            <Reveal direction="down">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-display font-black mb-4 sm:mb-6 tracking-tight italic uppercase">
-                Meet The <span className="text-primary not-italic">Leadership</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto italic font-serif px-2">
-                The visionaries driving Nexa Growth's mission to transform digital landscapes.
-              </p>
-            </Reveal>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <TeamMemberCard key={member.id} member={member} index={index} />
-            ))}
           </div>
         </div>
       </section>

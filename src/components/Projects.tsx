@@ -89,19 +89,9 @@ export const Projects = () => {
       >
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <Reveal direction="down">
-              <div className="inline-flex items-center gap-3 px-6 py-2 bg-primary/10 rounded-full text-primary font-bold text-sm mb-12 border border-primary/20 backdrop-blur-md">
-                PROJECT PORTFOLIO
-              </div>
-            </Reveal>
             <h1 ref={headlineRef} className="text-5xl md:text-7xl lg:text-8xl font-display font-black mb-10 text-foreground tracking-tighter leading-[0.9] italic max-w-5xl mx-auto">
               Our <span className="text-primary not-italic">Projects</span>
             </h1>
-            <Reveal delay={0.4}>
-              <p className="text-xl md:text-3xl lg:text-4xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-bold italic font-serif">
-                Performance-Driven Results Across E-commerce, Digital Marketing & Technology
-              </p>
-            </Reveal>
           </div>
         </div>
       </section>
