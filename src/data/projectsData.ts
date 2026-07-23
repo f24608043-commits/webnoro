@@ -255,6 +255,28 @@ export const digitalMarketingProjects = [
         fullDescription: 'Managed localized promotional campaigns for Debenhams store events using geo-fencing.',
         toolsUsed: ['Meta Ads', 'Google Ads', 'Foursquare Ads'],
         results: 'Measured foot traffic increase of 25% during promo events.'
+    },
+    {
+        id: 14,
+        title: 'Shawarna Awareness Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Brand Awareness', 'Social Media'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373993/Screenshot_2026-06-13_180424_c4ahoi.png',
+        shortDescription: 'Brand awareness campaign driving engagement and visibility.',
+        fullDescription: 'Strategic brand awareness campaign focused on increasing brand visibility and engagement through targeted social media and digital advertising.',
+        toolsUsed: ['Meta Ads', 'Instagram', 'Facebook', 'Analytics'],
+        results: 'Significant increase in brand awareness and customer engagement.'
+    },
+    {
+        id: 15,
+        title: 'Bon-fire Campaign',
+        category: 'AS Campaign',
+        tags: ['Campaign', 'Seasonal', 'Promotional'],
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373990/Screenshot_2026-06-13_180406_lrsluf.png',
+        shortDescription: 'Seasonal promotional campaign with high engagement.',
+        fullDescription: 'Creative seasonal promotional campaign designed to drive sales and customer engagement during the bon-fire season with compelling visuals and targeted messaging.',
+        toolsUsed: ['Meta Ads', 'Google Ads', 'Creative Design', 'Analytics'],
+        results: 'Successful campaign with high engagement and conversion rates.'
     }
 ];
 

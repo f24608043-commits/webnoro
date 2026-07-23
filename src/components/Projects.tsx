@@ -70,6 +70,8 @@ export const Projects = () => {
   const ecommerceMarketing = ecommerceProjects.filter(p => p.category === 'Amazon Marketing');
   const shopifyProjects = webDevelopmentProjects.filter(p => p.category === 'Shopify');
   const otherWebProjects = webDevelopmentProjects.filter(p => p.category !== 'Shopify');
+  const asCampaignProjects = digitalMarketingProjects.filter(p => p.category === 'AS Campaign');
+  const otherMarketingProjects = digitalMarketingProjects.filter(p => p.category !== 'AS Campaign');
 
   return (
     <section className="bg-transparent relative min-h-screen overflow-hidden">
@@ -176,12 +178,42 @@ export const Projects = () => {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-            {digitalMarketingProjects.map((project, idx) => (
-              <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                <ProjectCard project={project} onViewDetails={openModal} />
-              </Reveal>
-            ))}
+          <div className="space-y-32">
+            {/* AS Campaign Sub-section */}
+            {asCampaignProjects.length > 0 && (
+              <div>
+                <Reveal direction="down">
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                    <span className="w-16 h-px bg-primary/40" /> AS Campaign
+                  </h3>
+                </Reveal>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                  {asCampaignProjects.map((project, idx) => (
+                    <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                      <ProjectCard project={project} onViewDetails={openModal} />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Other Marketing Projects Sub-section */}
+            {otherMarketingProjects.length > 0 && (
+              <div>
+                <Reveal direction="down">
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                    <span className="w-16 h-px bg-primary/40" /> Digital Marketing
+                  </h3>
+                </Reveal>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                  {otherMarketingProjects.map((project, idx) => (
+                    <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                      <ProjectCard project={project} onViewDetails={openModal} />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
