@@ -71,7 +71,8 @@ export const Projects = () => {
   const shopifyProjects = webDevelopmentProjects.filter(p => p.category === 'Shopify');
   const otherWebProjects = webDevelopmentProjects.filter(p => p.category !== 'Shopify');
   const asCampaignProjects = digitalMarketingProjects.filter(p => p.category === 'AS Campaign');
-  const otherMarketingProjects = digitalMarketingProjects.filter(p => p.category !== 'AS Campaign');
+  const amazonPpcProjects = digitalMarketingProjects.filter(p => p.category === 'Amazon PPC' || p.category === 'PPC Design');
+  const otherMarketingProjects = digitalMarketingProjects.filter(p => p.category !== 'AS Campaign' && p.category !== 'Amazon PPC' && p.category !== 'PPC Design');
 
   return (
     <section className="bg-transparent relative min-h-screen overflow-hidden">
@@ -179,25 +180,7 @@ export const Projects = () => {
           </Reveal>
 
           <div className="space-y-32">
-            {/* AD Campaign Sub-section */}
-            {asCampaignProjects.length > 0 && (
-              <div>
-                <Reveal direction="down">
-                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
-                    <span className="w-16 h-px bg-primary/40" /> AD Campaign
-                  </h3>
-                </Reveal>
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-                  {asCampaignProjects.map((project, idx) => (
-                    <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                      <ProjectCard project={project} onViewDetails={openModal} portrait={true} />
-                    </Reveal>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Other Marketing Projects Sub-section */}
+            {/* Digital Marketing Sub-section */}
             {otherMarketingProjects.length > 0 && (
               <div>
                 <Reveal direction="down">
@@ -207,6 +190,42 @@ export const Projects = () => {
                 </Reveal>
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
                   {otherMarketingProjects.map((project, idx) => (
+                    <Reveal key={project.id} delay={idx * 0.1} direction="up">
+                      <ProjectCard project={project} onViewDetails={openModal} />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* AD Campaign Sub-section */}
+            {asCampaignProjects.length > 0 && (
+              <div>
+                <Reveal direction="down">
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                    <span className="w-16 h-px bg-primary/40" /> AD Campaign
+                  </h3>
+                </Reveal>
+                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
+                  {asCampaignProjects.map((project, idx) => (
+                    <Reveal key={project.id} delay={idx * 0.05} direction="up">
+                      <ProjectCard project={project} onViewDetails={openModal} portrait={true} small={true} />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Marketing Sub-section (Amazon PPC) */}
+            {amazonPpcProjects.length > 0 && (
+              <div>
+                <Reveal direction="down">
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
+                    <span className="w-16 h-px bg-primary/40" /> Marketing
+                  </h3>
+                </Reveal>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+                  {amazonPpcProjects.map((project, idx) => (
                     <Reveal key={project.id} delay={idx * 0.1} direction="up">
                       <ProjectCard project={project} onViewDetails={openModal} />
                     </Reveal>
@@ -235,21 +254,6 @@ export const Projects = () => {
               </Reveal>
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
                 {ecommerceAccounts.map((project, idx) => (
-                  <Reveal key={project.id} delay={idx * 0.1} direction="up">
-                    <ProjectCard project={project} onViewDetails={openModal} />
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <Reveal direction="down">
-                <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary mb-12 flex items-center gap-6">
-                  <span className="w-16 h-px bg-primary/40" /> Marketing
-                </h3>
-              </Reveal>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-                {ecommerceMarketing.map((project, idx) => (
                   <Reveal key={project.id} delay={idx * 0.1} direction="up">
                     <ProjectCard project={project} onViewDetails={openModal} />
                   </Reveal>

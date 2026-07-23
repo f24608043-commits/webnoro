@@ -11,9 +11,11 @@ interface ProjectCardProps {
   showLiveDemo?: boolean;
   /** When true, use portrait aspect ratio (9:16) for the image */
   portrait?: boolean;
+  /** When true, render card in smaller size */
+  small?: boolean;
 }
 
-export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, portrait = false }: ProjectCardProps) => {
+export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, portrait = false, small = false }: ProjectCardProps) => {
   const hasLiveLink = Boolean(project.liveLink);
   const hasMultipleImages = project.images && project.images.length > 1;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -47,7 +49,8 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, port
       className={cn(
         'group relative flex h-full flex-col overflow-hidden rounded-xl bg-card text-card-foreground cursor-pointer',
         'border border-border/50 shadow-md transition-all duration-300',
-        'hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5'
+        'hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5',
+        small ? 'rounded-lg' : ''
       )}
     >
       {/* Image: 16:9 aspect ratio or 9:16 portrait if specified */}
@@ -65,8 +68,11 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, port
       </div>
 
       {/* Title */}
-      <div className="p-3">
-        <h3 className="text-sm font-bold leading-tight text-foreground line-clamp-2">
+      <div className={cn(small ? 'p-1.5' : 'p-3')}>
+        <h3 className={cn(
+          'font-bold leading-tight text-foreground line-clamp-2',
+          small ? 'text-[10px]' : 'text-sm'
+        )}>
           {project.title}
         </h3>
       </div>

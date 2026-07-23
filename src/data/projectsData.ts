@@ -113,7 +113,7 @@ export const ecommerceProjects = [
     {
         id: 4,
         title: 'PPC Campaign Results | Improved Engagement',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['Amazon PPC'],
         image: ppcImprovedEngagementImg,
         shortDescription: 'Strategic Sponsored Ads restructuring to improve engagement metrics.',
@@ -124,7 +124,7 @@ export const ecommerceProjects = [
     {
         id: 5,
         title: 'PPC Campaign Results | Increased Sales',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['Amazon PPC'],
         image: ppcIncreasedSalesImg,
         shortDescription: 'High-ROAS scaling campaigns increasing overall marketplace revenue.',
@@ -135,7 +135,7 @@ export const ecommerceProjects = [
     {
         id: 11,
         title: 'Amazon Sales Stats',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['Amazon PPC'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781356395/Amazon_sales_stats_ofb8y6.png',
         shortDescription: 'Amazon sales performance tracking and analytics.',
@@ -146,7 +146,7 @@ export const ecommerceProjects = [
     {
         id: 12,
         title: 'E-bay Regent Style E-com',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['E-commerce'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781356383/E-bay_regent_style_e-com_rjif8r.png',
         shortDescription: 'E-commerce marketplace management and optimization.',
@@ -157,7 +157,7 @@ export const ecommerceProjects = [
     {
         id: 13,
         title: 'Divine Bed Deal',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['Amazon PPC'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781356381/Divine_bed_deal_vtagwq.png',
         shortDescription: 'Amazon promotional campaigns and deal optimization.',
@@ -168,7 +168,7 @@ export const ecommerceProjects = [
     {
         id: 14,
         title: 'Divine Beds Sale Stats',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['Amazon PPC'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781356381/divine_beds_sale_stats_hrevgo.png',
         shortDescription: 'Amazon sales analytics and performance metrics.',
@@ -179,7 +179,7 @@ export const ecommerceProjects = [
     {
         id: 15,
         title: 'Devan Beds Amazon',
-        category: 'Amazon Marketing',
+        category: 'Amazon PPC',
         tags: ['Amazon PPC'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781356380/Devan_beds_amazon_axsmef.png',
         shortDescription: 'Amazon account management with sales optimization.',
