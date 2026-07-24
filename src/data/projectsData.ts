@@ -720,7 +720,7 @@ export const teamMembers = [
         id: 1,
         name: 'Abdullah Saghir',
         role: 'Founder & CEO',
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781735945/ChatGPT_Image_Jun_18_2026_03_37_54_AM_tbb8f9.png',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650601/Abdullah_Saghir_-_CEO_and_founder_nexagrowthsolution.com_wrzkga.png',
         bio: 'Leading Nexa Growth with a vision for building lasting brands through strategy, technology, and performance-driven execution.'
     },
     {

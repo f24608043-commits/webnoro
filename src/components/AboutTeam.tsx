@@ -9,7 +9,7 @@ const leadershipTeam = teamMembers.filter((member) => member.role !== 'Founder &
 const LeadershipCard = ({ member, index }: { member: TeamMember; index: number }) => (
   <Reveal direction="up" delay={index * 0.08}>
     <TiltCard className="h-full">
-      <article className="group h-full overflow-hidden rounded-2xl border border-border/60 bg-card/60 shadow-xl backdrop-blur-xl transition-colors duration-500 hover:border-primary/50 sm:rounded-3xl">
+      <article className="group h-full overflow-hidden rounded-xl border border-border/60 bg-card/60 shadow-lg backdrop-blur-xl transition-colors duration-500 hover:border-primary/50 sm:rounded-2xl">
         <div className="relative aspect-[4/5] overflow-hidden bg-muted">
           <img
             src={member.image}
@@ -19,20 +19,20 @@ const LeadershipCard = ({ member, index }: { member: TeamMember; index: number }
             decoding="async"
           />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/35 text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          <div className="absolute bottom-2.5 right-2.5 flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-black/35 text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 sm:bottom-3 sm:right-3 sm:h-8 sm:w-8">
+            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
           </div>
         </div>
 
-        <div className="p-4 sm:p-5 lg:p-6">
-          <h3 className="font-display text-lg font-black leading-tight tracking-tight text-foreground sm:text-xl">
+        <div className="p-3 sm:p-4 lg:p-5">
+          <h3 className="font-display text-sm font-black leading-tight tracking-tight text-foreground sm:text-lg">
             {member.name}
           </h3>
-          <p className="mt-2 text-[11px] font-black uppercase leading-relaxed tracking-[0.14em] text-primary sm:text-xs">
+          <p className="mt-1.5 text-[9px] font-black uppercase leading-relaxed tracking-[0.1em] text-primary sm:mt-2 sm:text-[11px] sm:tracking-[0.12em]">
             {member.role}
           </p>
           {member.bio && (
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 hidden text-xs leading-relaxed text-muted-foreground sm:block lg:text-sm">
               {member.bio}
             </p>
           )}
@@ -101,9 +101,14 @@ export const AboutTeam = () => {
           </article>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-7">
           {leadershipTeam.map((member, index) => (
-            <LeadershipCard key={member.id} member={member} index={index} />
+            <div
+              key={member.id}
+              className="h-full last:col-span-2 last:w-[calc(50%-0.375rem)] last:justify-self-center sm:last:w-[calc(50%-0.625rem)] lg:last:col-span-1 lg:last:w-auto"
+            >
+              <LeadershipCard member={member} index={index} />
+            </div>
           ))}
         </div>
       </div>
