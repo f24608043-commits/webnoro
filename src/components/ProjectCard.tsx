@@ -1,5 +1,3 @@
-import { ExternalLink, Eye } from 'lucide-react';
-import { Button } from './ui/button';
 import { Project } from '../data/projectsData';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
@@ -9,7 +7,7 @@ interface ProjectCardProps {
   onViewDetails: (project: Project) => void;
   /** When true, show "Live Demo" instead of "View Details" (Web Dev cards) */
   showLiveDemo?: boolean;
-  /** When true, use portrait aspect ratio (9:16) for the image */
+  /** When true, use the campaign artwork's portrait 9:16 aspect ratio */
   portrait?: boolean;
   /** When true, render card in smaller size */
   small?: boolean;
@@ -53,7 +51,7 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, port
         small ? 'rounded-lg' : ''
       )}
     >
-      {/* Image: 16:9 aspect ratio or 9:16 portrait if specified */}
+      {/* Image: standard landscape or campaign portrait artwork */}
       <div className={cn(
         'relative overflow-hidden bg-muted',
         portrait ? 'aspect-[9/16]' : 'aspect-video'
@@ -68,10 +66,10 @@ export const ProjectCard = ({ project, onViewDetails, showLiveDemo = false, port
       </div>
 
       {/* Title */}
-      <div className={cn(small ? 'p-1.5' : 'p-3')}>
+      <div className={cn(small ? 'px-2 py-2 sm:px-2.5' : 'p-3')}>
         <h3 className={cn(
           'font-bold leading-tight text-foreground line-clamp-2',
-          small ? 'text-[10px]' : 'text-sm'
+          small ? 'text-[11px] sm:text-xs' : 'text-sm'
         )}>
           {project.title}
         </h3>

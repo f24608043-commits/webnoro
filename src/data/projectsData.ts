@@ -259,7 +259,7 @@ export const digitalMarketingProjects = [
     {
         id: 14,
         title: 'Shawarna Awareness Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Brand Awareness', 'Social Media'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373993/Screenshot_2026-06-13_180424_c4ahoi.png',
         shortDescription: 'Brand awareness campaign driving engagement and visibility.',
@@ -270,7 +270,7 @@ export const digitalMarketingProjects = [
     {
         id: 15,
         title: 'Bon-fire Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Seasonal', 'Promotional'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373990/Screenshot_2026-06-13_180406_lrsluf.png',
         shortDescription: 'Seasonal promotional campaign with high engagement.',
@@ -281,7 +281,7 @@ export const digitalMarketingProjects = [
     {
         id: 16,
         title: 'Hiring Chef Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Recruitment', 'Social Media'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373989/Screenshot_2026-06-13_180417_xjjjx2.png',
         shortDescription: 'Recruitment campaign for hiring chefs.',
@@ -292,7 +292,7 @@ export const digitalMarketingProjects = [
     {
         id: 17,
         title: 'Hiring Chef New Engagement Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Recruitment', 'Engagement'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373973/Screenshot_2026-06-13_180400_zs5oc3.png',
         shortDescription: 'Enhanced recruitment campaign for chef positions.',
@@ -303,7 +303,7 @@ export const digitalMarketingProjects = [
     {
         id: 18,
         title: 'Skill Barista Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Recruitment', 'Training'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373988/Screenshot_2026-06-13_180412_rznslw.png',
         shortDescription: 'Campaign for skilled barista recruitment.',
@@ -314,7 +314,7 @@ export const digitalMarketingProjects = [
     {
         id: 19,
         title: 'Skill Barista New Engagement Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Recruitment', 'Engagement'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373953/Screenshot_2026-06-13_180326_celcsa.png',
         shortDescription: 'Enhanced barista recruitment campaign.',
@@ -325,7 +325,7 @@ export const digitalMarketingProjects = [
     {
         id: 20,
         title: 'Takeaway Discount',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Promotional', 'Food'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373945/Screenshot_2026-06-13_180319_iaozpv.png',
         shortDescription: 'Promotional discount campaign for takeaway.',
@@ -336,7 +336,7 @@ export const digitalMarketingProjects = [
     {
         id: 21,
         title: 'Havenly Special Deals',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Promotional', 'Special Offers'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373940/Screenshot_2026-06-13_180313_rhcu8v.png',
         shortDescription: 'Special deals promotional campaign.',
@@ -347,7 +347,7 @@ export const digitalMarketingProjects = [
     {
         id: 22,
         title: 'Techpreneur New Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Tech', 'Entrepreneurship'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373934/Screenshot_2026-06-13_180307_t67wv5.png',
         shortDescription: 'Campaign targeting tech entrepreneurs.',
@@ -358,7 +358,7 @@ export const digitalMarketingProjects = [
     {
         id: 23,
         title: 'Furnuretify Campaign',
-        category: 'AS Campaign',
+        category: 'AD Campaign',
         tags: ['Campaign', 'Furniture', 'E-commerce'],
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781373932/Screenshot_2026-06-13_180246_mfq3q4.png',
         shortDescription: 'Furniture e-commerce promotional campaign.',
