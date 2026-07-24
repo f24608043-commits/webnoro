@@ -719,36 +719,43 @@ export const teamMembers = [
     {
         id: 1,
         name: 'Abdullah Saghir',
-        role: 'CEO',
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781358085/Abdullah_Saghir_nexa_growth_solution_CEO_x3ungq.png',
-        bio: 'Leading Nexa Growth with vision and strategic expertise in digital transformation.'
+        role: 'Founder & CEO',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781735945/ChatGPT_Image_Jun_18_2026_03_37_54_AM_tbb8f9.png',
+        bio: 'Leading Nexa Growth with a vision for building lasting brands through strategy, technology, and performance-driven execution.'
     },
     {
         id: 2,
-        name: 'Chaughry Bilal',
-        role: 'Marketing Lead',
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781358086/Chaughry_Bilal_nexa_growh_solution_makreting_lead_hrnan8.png',
-        bio: 'Driving marketing strategies that deliver measurable results and brand growth.'
+        name: 'Muhammad Abubakar',
+        role: 'Project Manager',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650631/Muhammad_Abubakar_project_manager_nexagrowthsolution.com_ddrntr.png',
+        bio: 'Keeping teams aligned, projects on schedule, and every client deliverable focused on quality.'
     },
     {
         id: 3,
-        name: 'Muhammad Abubakar',
-        role: 'Project Manager',
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781358086/Muhammad_Abubakar_nexa_growth_solution_project_manager_md5qhe.png',
-        bio: 'Ensuring seamless project execution and client satisfaction through meticulous planning.'
+        name: 'Bilal Chaudhry',
+        role: 'Marketing Lead',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650622/Bilal_Chaudhry_marketing_lead_nexagrwothsolution.com_esf6dm.png',
+        bio: 'Building focused marketing strategies that connect brands with the right audiences and deliver measurable growth.'
     },
     {
         id: 4,
-        name: 'Abdullah Jawad',
-        role: 'Marketing Associate & Lead Gen',
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781358087/Abdullah_Jawad_nexa_growth_solution_maketing_associated_and_lead_gen_p6urrv.png',
-        bio: 'Specializing in lead generation and marketing campaign optimization.'
+        name: 'Hassan Ahmed',
+        role: 'Media Lead & Marketing Manager',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650623/Hassan_Ahmed_Media_Lead_and_marketing_manager_nexagrowthsolution.com_drkoqv.png',
+        bio: 'Leading media strategy and campaign delivery with a sharp eye for creative performance and brand consistency.'
     },
     {
         id: 5,
         name: 'Abdullah Fayyaz',
         role: 'Web Development Lead',
-        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/q_auto/f_auto/v1781373907/Screenshot_2026-06-13_230308_yngqgc.png',
-        bio: 'Leading web development initiatives with expertise in modern technologies and scalable solutions.'
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650598/Abdullah_Fayyaz_web_development_lead_nexagrowthsolution.com_rv8qnn.png',
+        bio: 'Engineering fast, reliable digital products with modern technology and a strong focus on scalability.'
+    },
+    {
+        id: 6,
+        name: 'Abdullah Jawad',
+        role: 'Marketing Associate',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650586/Abdullah_Jawad_makreting_associate_nexagrowthsolution.com_ylqivs.png',
+        bio: 'Supporting campaign execution, audience research, and lead-generation initiatives across client accounts.'
     }
 ];

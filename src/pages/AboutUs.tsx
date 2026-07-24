@@ -13,6 +13,7 @@ import AnimatedSectionWrapper from '@/components/AnimatedSectionWrapper';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ContactCTA } from '@/components/CTA';
 import { InternationalSEO } from '@/components/InternationalSEO';
+import { AboutTeam } from '@/components/AboutTeam';
 
 const AboutUs = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -99,6 +100,8 @@ const AboutUs = () => {
 
       {/* Stats Quick Look */}
       <Stats />
+
+      <AboutTeam />
 
       {/* Who We Are */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
