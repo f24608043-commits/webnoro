@@ -757,5 +757,12 @@ export const teamMembers = [
         role: 'Marketing Associate',
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781650586/Abdullah_Jawad_makreting_associate_nexagrowthsolution.com_ylqivs.png',
         bio: 'Supporting campaign execution, audience research, and lead-generation initiatives across client accounts.'
+    },
+    {
+        id: 7,
+        name: 'Saad Imran',
+        role: 'Full Stack Developer',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781735945/ChatGPT_Image_Jun_18_2026_03_37_54_AM_tbb8f9.png',
+        bio: 'Building robust full-stack applications with expertise in modern web technologies and scalable architecture.'
     }
 ];
