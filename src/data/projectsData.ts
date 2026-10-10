@@ -764,5 +764,12 @@ export const teamMembers = [
         role: 'Full Stack Developer',
         image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1781735945/ChatGPT_Image_Jun_18_2026_03_37_54_AM_tbb8f9.png',
         bio: 'Building robust full-stack applications with expertise in modern web technologies and scalable architecture.'
+    },
+    {
+        id: 8,
+        name: 'Ali Abbas',
+        role: 'E-commerce VA',
+        image: 'https://res.cloudinary.com/dhffgjyra/image/upload/v1791662405/Screenshot_2026-10-11_005923_gqlku7.png',
+        bio: 'Supporting e-commerce operations with efficient virtual assistance and account management.'
     }
 ];
